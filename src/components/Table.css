@@ -2,16 +2,16 @@
   position: relative;
 }
 .table1 {
-    border: 1px solid #3144b4;
-    text-align: center;
-    position: relative;
-    z-index: 50;
-    background: #e6dbd8;
-    box-shadow: 0 21px 0px -10px #3144b4;
-    
+  border: 1px solid #3144b4;
+  /* text-align: center; */
+  position: relative;
+  z-index: 50;
+  background: #f9dad3;
+  height: 84px;
+  box-shadow: 0 21px 0px -10px #3144b4;
 }
 .table-shadow {
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 .table td {
   border: 1px solid;
@@ -29,18 +29,22 @@
   border: none;
 }
 .rowcol {
-  font-family: Sora;
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
+  line-height: 160%;
   color: #3144b4;
-  text-align: left;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .background {
-  position: absolute;
+  position: relative;
   display: flex;
-  top: 1.5rem;
+  top: -1.5rem;
   align-items: flex-end;
 }
-.card-bg-img{
-    width: 125%;
-    height: 5rem;
+.card-bg-img {
+  width: 125%;
+  height: 5rem;
 }

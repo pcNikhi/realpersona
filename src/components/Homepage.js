@@ -1,8 +1,10 @@
 import "./Homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Vector from "./assests/Vector.svg";
+import Love from "./assests/Love.svg"
 import Rectangle_1 from "./assests/Rectangle_1.svg";
 import TableList from "./TableList";
+import Frame from "./Frame/Frame";
+import CardAndTable from "./CardAndTable/CardAndTable";
 import Table from "./Table";
 const Homepage = () => {
   return (
@@ -11,7 +13,7 @@ const Homepage = () => {
         <div className="col-md-8">
           <div className="topBorder">
             <div className="design col-md-3">
-              Crafted with <img src={Vector} alt="Vector"></img> Love by Lollpop
+              Crafted with <img src={Love} alt="Vector"></img> Love by Lollpop
               design tribe
             </div>
             <div class="row">
@@ -24,9 +26,10 @@ const Homepage = () => {
           <Table />
         </div>
         
-        <TableList/>
+        <CardAndTable/>
+        {/* <TableList /> */}
+        <Frame/>
       </div>
-     
     </div>
   );
 };
