@@ -1,6 +1,6 @@
 import "./Table.css";
 import background from "./assests/background.svg";
-//import "bootstrap/dist/css/bootstrap.min.css";
+import CardAndTable from "./CardAndTable/CardAndTable";
 const Table = () => {
   return (
     <div className="table-container">

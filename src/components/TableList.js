@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './TableList.css'
+import  parvathamma from "./assests/parvathamma.svg";
 const TableList = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -13,24 +14,24 @@ const TableList = () => {
       {data.map((item) => (
         <div key={item.id}>
           <div>
-            <table className="col-md-12 table tablegrid">
-              <tr> 
+            <table className="col-md-12 table_grid">
+              <tr border> 
                 <td className="col-md-4">
                   <img
-                    style={{ width: 175, height: 175 }}
-                    className="tc br3"
+                   className="col-md-5 person_image "
                     alt="none"
-                    src={item.server_file_name}
+                    // src={item.server_file_name}
+                    src={parvathamma}
                   />
-                  <div classnae='table_name'>{item.firstname}{item.lastname}</div>
+                  <span className='col-md-7 person_name'>{item.firstname} {item.lastname}</span>
                 </td>
-                <td className="col-md-2">
-                  {item.age}
+                <td className="col-md-2 text">
+                  {item.age} years
                 </td>
-                <td className="col-md-2">
+                <td className="col-md-2 text">
                   {item.occupation}
                 </td>
-                <td className="col-md-4">
+                <td className="col-md-4 text">
                   {item.location}
                 </td>
               </tr>
