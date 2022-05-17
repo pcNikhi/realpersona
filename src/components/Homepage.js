@@ -13,7 +13,7 @@ const Homepage = () => {
         <div className="col-md-8">
           <div className="topBorder">
             <div className="design col-md-3">
-              Crafted with <img src={Love} alt="Vector"></img> Love by Lollpop
+              Crafted with <img src={Love} alt="Vector"></img><span className="love-color"> Love</span> by Lollpop
               design tribe
             </div>
             <div class="row">
@@ -23,12 +23,16 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          <Table />
+      
+          <div className="stickyheader">
+            <Table/>
+          </div>
+          
         </div>
         
         <CardAndTable/>
-        {/* <TableList /> */}
-        <Frame/>
+        {/* <TableList />
+        <Frame/> */}
       </div>
     </div>
   );

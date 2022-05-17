@@ -2,10 +2,11 @@ import "./Table.css";
 import background from "./assests/background.svg";
 import CardAndTable from "./CardAndTable/CardAndTable";
 const Table = () => {
+  
   return (
     <div className="table-container">
       <div className="table-shadow">
-        <table className="table1 col-md-12">
+        <table className="table1 col-md-12 ">
           <tr>
             <td className="col-md-3 rowcol">
               Age

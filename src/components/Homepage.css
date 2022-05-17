@@ -1,33 +1,38 @@
-.Homepage
-{
-    background-color: #F9DAD3;
-    
+.Homepage {
+  background-color: #f9dad3;
 }
-.container
-{
-    padding-left:5.25rem;
-    padding-top:6.813rem;
+.container {
+  padding-left: 5.25rem;
+  padding-top: 6.813rem;
 }
-.heading
-{
-    font-size: 92px;
-    font-style: sora;
-    font-weight: bold;
-    color:#3144B4;
-    padding: auto;
+.heading {
+  font-size: 92px;
+  font-style: sora;
+  font-weight: bold;
+  color: #3144b4;
+  padding: auto;
 }
-.design
-{
-    /* padding-left: 6.7%;
+.design {
+  /* padding-left: 6.7%;
     padding-top:4.67%;
     padding-right: 71%;
     margin: auto; */
 }
-.heading img
-{
-    border-radius: 50%;
+.heading img {
+  border-radius: 50%;
 }
-.topBorder
-{
-    padding-left: 2.563rem;
+.topBorder {
+  padding-left: 2.563rem;
+}
+/* .stickyheader {
+    top: 0;
+    position: sticky;
+    position: -webkit-sticky;
+} */
+sticky {
+    position: fixed;
+    top: 0;
+}
+.love-color {
+  color: #ff0000;
 }

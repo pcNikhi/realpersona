@@ -28,10 +28,16 @@
 }
 .container1 {
   margin-top: -2.4rem;
-  box-sizing: border-box;
   position: absolute;
   left: 1012px;
-  width: 9%;
+  width: 12%;
   top: 70px;
   border: 1px solid #3144b4;
+  border-collapse: collapse;
 }
+.button-card
+{
+  width: 100%;
+  background-color:#F9DAD3;
+}
+

@@ -2,11 +2,15 @@ import "./Frame.css";
 import parvathamma from '../assests/parvathamma.svg'
 import photo2 from '../assests/photo2.svg'
 import photo3 from '../assests/photo3.svg';
+import Line from '../assests/Line.svg'
 
 const Frame = () => {
   return (
     <div>
       <div className="row">
+      <div className="bottem-line1">
+        {/* <img src={Line} alt="line"></img> */}
+      </div>
         <div className="col-4">
           <div className="cardContainer1">
             <div className="image1">
