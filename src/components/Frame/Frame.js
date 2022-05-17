@@ -13,10 +13,7 @@ const [data, setData] = useState([]);
       setData(response.data);
     });
   }, []);
-  // if(
-  //   data.indexOf % 2 != 0
-    
-  // )
+  
   return (
     <span>
       <div className="col-md-12">
