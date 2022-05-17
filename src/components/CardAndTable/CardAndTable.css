@@ -1,0 +1,37 @@
+.page1 {
+  padding: 60px 60px 60px 0px;
+  background-color: #f9dad3;
+  /* width: 100%;
+  height: 146vh; */
+  position: relative;
+}
+.display1 {
+  position: absolute;
+  top: 1.313rem;
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16%;
+  color: #3144b4;
+}
+.person1 {
+  position: absolute;
+  top: 25px;
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  color: #3144b4;
+}
+.container1 {
+  margin-top: -2.4rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: 1000px;
+  width: 11%;
+  top: 70px;
+  border: 1px solid #3144b4;
+}

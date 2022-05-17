@@ -1,0 +1,50 @@
+.table-container {
+  position: relative;
+}
+.table1 {
+  border: 1px solid #3144b4;
+  /* text-align: center; */
+  position: relative;
+  z-index: 50;
+  background: #f9dad3;
+  height: 84px;
+  box-shadow: 0 21px 0px -10px #3144b4;
+}
+.table-shadow {
+  padding-left: 2.5rem;
+}
+.table td {
+  border: 1px solid;
+  border-color: #3144b4;
+}
+.dropdown {
+  font-family: Sora;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #3144b4;
+  background-color: #ffffff;
+  border: none;
+}
+.rowcol {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #3144b4;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.background {
+  position: relative;
+  display: flex;
+  top: -1.5rem;
+  align-items: flex-end;
+}
+.card-bg-img {
+  width: 125%;
+  height: 5rem;
+}

@@ -1,25 +1,28 @@
 .container-1 {
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 690px;
 }
 .personDetail {
-  position: absolute;
-  bottom: 0;
-  width: 288px;
-  padding: 15px 15px 15px 15px;
+  bottom: .2rem; 
+   width: 288px; 
+  left:5px;
+  padding:  3px 30px 40px;
   position: absolute;
   color: #f9dad3;
   background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
+  /* float: left;
+  width: 33.33%;
+  padding: 5px; */
 }
 .text-block1 {
   padding: 15px 15px 15px 15px;
-  position: absolute;
+  position: relative;
   width: 258px;
   color: #f9dad3;
   background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
 }
-p1 {
+.p1 {
   position: absolute;
   /* top: 55px; */
   font-family: "Sora";
@@ -45,7 +48,7 @@ p1 {
   left: 449px;
   background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
 }
-p2 {
+.p2 {
   position: absolute;
   top: 30px;
   font-family: "Sora";
@@ -70,7 +73,7 @@ p2 {
   left: 838px;
   background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
 }
-p3 {
+.p3 {
   position: absolute;
   top: 30px;
   font-family: "Sora";
@@ -82,4 +85,12 @@ p3 {
 
 .cardContainer1 {
   position: relative;
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  /* background-color: red;
+  border: 6px solid transparent;
+  padding-right: 4rem; */
+  /* : #ffffff;background */
 }
+
