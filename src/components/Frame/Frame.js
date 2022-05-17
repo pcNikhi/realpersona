@@ -1,27 +1,45 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Frame.css";
 import parvathamma from '../assests/parvathamma.svg'
-import photo2 from '../assests/photo2.svg'
-import photo3 from '../assests/photo3.svg';
+import { mergeStyles } from "react-select";
+// import photo2 from '../assests/photo2.svg'
+// import photo3 from '../assests/photo3.svg';
 
 const Frame = () => {
+const [data, setData] = useState([]);
+  useEffect(() => {
+    axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
+      setData(response.data);
+    });
+  }, []);
+  // if(
+  //   data.indexOf % 2 != 0
+    
+  // )
   return (
-    <div>
-      <div className="row">
-        <div className="col-4">
-          <div className="cardContainer1">
-            <div className="image1">
+    <span>
+      <div className="col-md-12">
+        
+        {data.map((details) => (
+          
+          <div key={details.id}>
+        <span className="">
+          <span className="cardContainer1">
+            <span className="image1">
               <img src={parvathamma} alt="parvathamma" />
-            </div>
-            <div className="personDetail">
-              <div className="row">
-                <h4 className="Name1">Parvatamma Gowda</h4>
-              </div>
-              <div className="row">
-                <p className="p1">58 Years, Housewife, Mysore, Karnataka</p>
-              </div>
-            </div>
-          </div>
-        </div>
+            </span>
+            <span className="personDetail">
+              <span className="">
+                <h4 className="Name1">{details.firstname} {details.lastname}</h4>
+              </span>
+              <span className="">
+                <p className="p1">
+                {details.age} years {details.occupation}  {details.location} </p>
+              </span>
+            </span>
+          </span>
+        </span>
         {/* <div class="col-4">
           <div className="cardContainer2">
             <img src={photo2} alt="photo2" />
@@ -40,8 +58,12 @@ const Frame = () => {
             <p className="p3">30 Years, Female, Mysore, Karnataka</p>
           </div>
         </div> */}
+      
+        </div>
+      ))}
       </div>
-    </div>
+     
+    </span>
   );
 };
 
