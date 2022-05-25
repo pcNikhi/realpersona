@@ -2,9 +2,8 @@
   position: absolute;
   width: 604px;
   height: 1227px;
-  right: 0;
-  z-index: 9999;
-  top: 0px;
+  left: 646px;
+  top: 30px;
   background: #3144b4;
 }
 
@@ -12,7 +11,7 @@
   position: absolute;
   width: 171px;
   height: 64px;
-  left: 365px;
+  left: 300px;
   top: 234px;
   font-family: "Sora";
   font-style: normal;
@@ -23,26 +22,26 @@
   color: #f9dad3;
 }
 
-/* .selected_person {
+.date {
   position: absolute;
   width: 62px;
   height: 32px;
-  left: 513px;
+  left: 465px;
   top: 253px;
-  font-family: 'Sora';
+  font-family: "Sora";
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
   line-height: 160%;
   letter-spacing: -0.05em;
   color: #f9dad3;
-} */
+}
 
 .close {
   position: absolute;
   width: 45px;
   height: 26px;
-  left: 480px;
+  left: 415px;
   top: 68px;
   font-family: "Sora";
   font-style: normal;
@@ -52,112 +51,111 @@
   letter-spacing: -0.05em;
   color: #f9dad3;
 }
-.cloz {
+.cloz{
   position: absolute;
   width: 18.38px;
   height: 18px;
-  left: 542px;
+  left: 494px;
   top: 74.42px;
   color: #f9dad3;
   cursor: pointer;
   /* transform: rotate(90deg); */
 }
-.box1 {
-  position: relative;
-  width: 516px;
-  height: 100px;
-  left: 47px;
-  top: 322px;
-  background: #ffffff;
-  border: 5px solid #3144b4;
+.box1{
+    position: absolute;
+    width: 516px;
+    height: 110px;
+    left: 47px;
+    top: 322px;
+    background: #FFFFFF;
 }
-.firstname {
-  position: relative;
-  left: -2px;
-  top: 8px;
-  font-family: "Sora";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.02em;
-  color: #3144b4;
+.col-md-3{
+position: relative;
+left: 20px;
+top: 17px;
+font-family: 'Sora';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 118%;
+letter-spacing: -0.02em;
+color: #3144B4;
 }
-.address {
+.address{
+position: absolute;
+left: 23px;
+top: 55px;
+font-family: 'Sora';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 160%;
+color: #3144B4;
+}
+/* .image1{
   position: absolute;
-  left: 90px;
-  top: 35px;
-  font-family: "Sora";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 160%;
-  color: #3144b4;
+width: 92px;
+height: 90px;
+left: 699px;
+top: 332px;
+
+background:#FFFFFF;
+} */
+.delete1{
+  position: absolute;
+left: 91.25%;
+right: 7.34%;
+top: 26.34%;
+bottom: 72.11%;
+}
+.box2{
+    position: absolute;
+    width: 516px;
+    height: 110px;
+    left: 47px;
+    top: 455px;
+    
+    background: #FFFFFF;
+}
+.box3{
+    position: absolute;
+    width: 516px;
+    height: 110px;
+    left: 47px;
+    top: 585px;
+    
+    background: #FFFFFF;
+}
+.box4{
+    position: absolute;
+    width: 516px;
+    height: 110px;
+    left: 47px;
+    top: 715px;
+    
+    background: #FFFFFF;
 }
 
-.image1 {
-  float: left;
-  width: 92px;
-  height: 90px;
-  padding: 10px 10px 9px;
-}
+.download{
+    position: absolute;
+width: 518px;
+height: 81px;
+left: 47px;
+top: 1119px;
 
-.delete_button {
-  position: absolute;
-  left: 91.25%;
-  right: 7.34%;
-  top: 26.34%;
-  bottom: 72.11%;
-  background: white;
-  border: white;
+background: #F9DAD3;
 }
-.box2 {
-  position: absolute;
-  width: 516px;
-  height: 110px;
-  left: 47px;
-  top: 455px;
-  background: #ffffff;
-}
-.box3 {
-  position: absolute;
-  width: 516px;
-  height: 110px;
-  left: 47px;
-  top: 585px;
-
-  background: #ffffff;
-}
-.box4 {
-  position: absolute;
-  width: 516px;
-  height: 110px;
-  left: 47px;
-  top: 715px;
-
-  background: #ffffff;
-}
-
-.download {
-  position: absolute;
-  width: 518px;
-  height: 81px;
-  left: 47px;
-  top: 1119px;
-
-  background: #f9dad3;
-}
-.dload {
-  position: relative;
-  width: 283px;
-  height: 38px;
-  left: 152px;
-  top: 24px;
-  font-family: "Sora";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 160%;
-  letter-spacing: -0.05em;
-  color: #3144b4;
+.col-md-2{
+position: relative;
+width: 283px;
+height: 38px;
+left: 152px;
+top: 24px;
+font-family: 'Sora';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 160%;
+letter-spacing: -0.05em;
+color: #3144B4;
 }

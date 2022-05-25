@@ -4,10 +4,10 @@
   top: 690px;
 }
 .personDetail {
-  bottom: 0.35rem;
-  width: 288px;
-  left: 6.5px;
-  padding: 3px 30px 40px;
+  bottom: .2rem; 
+   width: 288px; 
+  left:5px;
+  padding:  3px 30px 40px;
   position: absolute;
   color: #f9dad3;
   background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
@@ -94,67 +94,3 @@
   /* : #ffffff;background */
 }
 
-/* .image1{
-border: 5px solid;
-border-color: aqua ;
-border-width: 10px;
-}  */
-/* .image-border{
-  border: 10px solid red;
-} */
-.checkbox1 {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  left: 248px;
-  top: 308px;
-  background: #f9dad3;
-}
-/* .border
-{
-  border: 2px solid red;
-} */
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.single-card {
-  position: relative;
-  margin-bottom: 2rem;
-  cursor: pointer;
-}
-
-.normal-border {
-  border: 12px solid #ffffff;
-}
-
-.selected-border {
-  border: 12px solid #3144b4;
-}
-
-.card-details-con {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-image: linear-gradient(transparent, #3144b4);
-  min-height: 8rem;
-  color: #f9dad3;
-  padding: 2rem 1rem 1rem;
-}
-h4 {
-  font-size: 28px;
-  font-weight: 800;
-}
-.dtls-con {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.input-box {
-  width: 2rem;
-  height: 2rem;
-}
