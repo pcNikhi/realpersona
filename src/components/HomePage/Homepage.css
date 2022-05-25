@@ -18,17 +18,16 @@
     padding-right: 71%;
     margin: auto; */
 }
-.heading img {
-  border-radius: 50%;
-}
+/* .heading img {
+  border-radius: 100%;
+} */
 .topBorder {
   padding-left: 2.563rem;
 }
-/* .stickyheader {
-    top: 0;
-    position: sticky;
-    position: -webkit-sticky;
-} */
+ .stickyheader {
+  position: sticky;
+   top:0px
+} 
 sticky {
     position: fixed;
     top: 0;
@@ -36,3 +35,4 @@ sticky {
 .love-color {
   color: #ff0000;
 }
+

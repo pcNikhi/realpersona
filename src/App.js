@@ -1,6 +1,6 @@
-import Homepage from './components/Homepage'
-import Filters from './components/filters';
-import './components/Homepage.css'
+import Homepage from './components/HomePage/Homepage'
+//import Filters from './components/filters';
+import './components/HomePage/Homepage.css';
 function App() {
   return (
     <div className="Homepage">

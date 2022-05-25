@@ -87,10 +87,17 @@ p1 {
   padding-right: 4rem; */
   /* : #ffffff;background */
 }
-.bottem-line1 {
-   position: fixed;
+/* .bottem-line1 {
+   position: relative;
     width: 8%;
     box-shadow: 0 13px 0px -10px #3144b4;
-    /* z-index: revert; */
-    left: 92%;
+} */
+.bottem-image1
+{
+  position:absolute;
+    width:100%;
+    bottom:1px;
+    z-index:-1;
+    transform:scale(.9);
+    box-shadow: 0px 0px 8px 2px #000000
 }
