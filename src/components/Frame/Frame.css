@@ -1,0 +1,52 @@
+
+.card-container4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 7%;
+}
+
+.single-card1 {
+  position: relative;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.normal-border1 {
+  border: 12px solid #ffffff;
+}
+
+.selected-border1 {
+  border: 12px solid #3144b4;
+}
+
+.card-details-con1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(transparent, #3144b4);
+  min-height: 8rem;
+  color: #f9dad3;
+  padding: 2rem 1rem 1rem;
+}
+h4 {
+  font-size: 28px;
+  font-weight: 800;
+}
+.dtls-con1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.input-box2 {
+  width: 2rem;
+  height: 2rem;
+}
+.download_data {
+  background-color: #3144b4;
+  border: 1px solid #3144b4;
+  position: absolute;
+  right: -3.3rem;
+  top: -10rem;
+}

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Fragment } from "react";
 import "./Card.css";
 import parvathamma from "../../assets/parvathamma.svg";
-import checkbox from "../../assets/checkbox.svg";
+import checkbox from "../../assests/checkbox.svg"
 import download from "../../assests/download.svg";
 import Grid from "../Grid";
 const Card = () => {
