@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './TableList.css'
-import  parvathamma from "./assests/parvathamma.svg";
+import  parvathamma from "../../assets/parvathamma.svg";
 const TableList = () => {
   const [data, setData] = useState([]);
   useEffect(() => {

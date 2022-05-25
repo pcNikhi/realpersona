@@ -1,7 +1,10 @@
 import "./Table.css";
-import background from "./assests/background.svg";
-import CardAndTable from "./CardAndTable/CardAndTable";
+import background from "../../assets/background.svg";
+// import CardAndTable from "../CardAndTable/CardAndTable";
 const Table = () => {
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div className="table-container">
       <div className="table-shadow">
@@ -52,7 +55,9 @@ const Table = () => {
           className=" col-md-9 card-bg-img"
         />
         <p className="col-md-2" style={{ paddingLeft: "0.5rem" }}>
-          clear filters
+          <button type="button" onClick={refreshPage}>
+            clear filters
+          </button>
         </p>
       </div>
     </div>

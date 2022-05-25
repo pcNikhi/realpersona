@@ -1,5 +1,7 @@
-import Homepage from './components/Homepage'
-import './components/Homepage.css'
+import React, {components} from 'react';
+import Homepage from './components/Homepage/Homepage'
+import './components/Homepage/Homepage.css'
+import Grid from './components/Grid/Grid'; 
 function App() {
   return (
     <div className="Homepage">
