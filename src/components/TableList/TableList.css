@@ -81,11 +81,11 @@
   padding: 20px 40px 20px 20px;
   float: left;
 }
-.download_data
+.download_data1
 {
   background-color:#3144b4;
   border: 1px solid #3144b4;
   position: absolute;
   right: -7rem;
-    top: -18rem;
+  top: -18rem;
 }

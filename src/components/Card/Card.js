@@ -1,52 +1,89 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Fragment } from "react";
 import "./Card.css";
-import parvathamma from "../../assests/parvathamma.svg";
-import photo2 from "../../assests/photo2.svg";
-import photo3 from "../../assests/photo3.svg";
-import Line from "../../assests/Line.svg";
-
+import parvathamma from "../../assets/parvathamma.svg";
+import checkbox from "../../assets/checkbox.svg";
+import download from "../../assests/download.svg";
+import Grid from "../Grid";
 const Card = () => {
-  return (
-    <div>
-      {/* <img className="bottem-image1" src={Line} alt="line"></img> */}
-      <div className="">
+  const [data, setData] = useState([]);
+  const [showSelectedData, setShowSelectedData] = useState(false);
 
-      </div>
-      <div className="row">
-        <div className="col-4">
-          <div className="cardContainer1">
-            <div className="image1">
-              <img src={parvathamma} alt="parvathamma" />
-            </div>
-            <div className="personDetail">
-              <div className="row">
-                <h4 className="Name1">Parvatamma Gowda</h4>
+  useEffect(() => {
+    axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
+      response.data.map((ele) => {
+        ele.isSelected = false;
+        return ele;
+      });
+      setData(response.data);
+    });
+  }, []);
+  
+  const imageClick = (id) => {
+    setData(
+      data.map((el) =>
+        el.persona_id === id
+          ? Object.assign({}, el, { isSelected: !el.isSelected })
+          : el
+      )
+    );
+  };
+  return (
+    <Fragment>
+      <div className="col-md-12 card-container4">
+        {data.map((details) => (
+          <div
+            key={details?.persona_id}
+            className={`single-card1 ${
+              details?.isSelected ? "selected-border1" : "normal-border1"
+            }`}
+            onClick={() => imageClick(details?.persona_id)}
+          >
+            <img
+              className={`image-border1 ${details?.isSelected && "border"}`}
+              src={parvathamma}
+              alt="parvathamma"
+            />
+
+            <div className="card-details-con1">
+              <h4>
+                {details.firstname} {details.lastname}
+              </h4>
+              <div className="dtls-con1">
+                <div>
+                  <p>
+                    {details.age} years {details.occupation} {details.location}{" "}
+                  </p>
+                </div>
+                <div>
+                  {details?.isSelected && (
+                    <img
+                      className="input-box2"
+                      src={checkbox}
+                      onClick={() => {
+                        {
+                          imageClick(details?.persona_id);
+                        }
+                      }}
+                    />
+                  )}
+                </div>
               </div>
-              <div className="row">
-                <p className="p1">58 Years, Housewife, Mysore, Karnataka</p>
-              </div>
             </div>
           </div>
-        </div>
-        {/* <div class="col-4">
-          <div className="cardContainer2">
-            <img src={photo2} alt="photo2" />
-          </div>
-          <div className="text-block2">
-            <h4 className="Name2">Preetham Jain</h4>
-            <p className="p2">58 Years, Student, Mysore, Karnataka</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div className="cardContainer3">
-            <img src={photo3} alt="photo3" />
-          </div>
-          <div className="text-block3">
-            <h4 className="Name3">Sweta Pandit</h4>
-            <p className="p3">30 Years, Female, Mysore, Karnataka</p>
-          </div>
-        </div> */}
+        ))}
+         <button
+            className="download_data"
+            onClick={() => setShowSelectedData(true)}
+          >
+            <img src={download} />
+          </button>
+          {showSelectedData && (
+            <Grid data={data} setShowSelectedData={setShowSelectedData} />
+          )}
       </div>
-    </div>
+    </Fragment>
   );
 };
 

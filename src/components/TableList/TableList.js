@@ -85,7 +85,7 @@ const TableList = () => {
             ))}
           </table>
           <button
-            className="download_data"
+            className="download_data1"
             onClick={() => setShowSelectedData(true)}
           >
             <img src={download} />

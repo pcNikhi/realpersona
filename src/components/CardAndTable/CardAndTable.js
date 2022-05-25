@@ -3,9 +3,9 @@ import "./CardAndTable.css";
 import Group7 from "../../assests/Group7.svg";
 import table from "../../assests/table.svg";
 import TableList from "../TableList/TableList";
-import Frame from "../Card/Card";
+import Card from "../Card/Card";
 
-//import Frame from "./components/Frame"
+//import Card from "./components/Card"
 const CardAndTable = () => {
   const [card, setCard] = useState(true);
   const [tablel, setTable] = useState(false);
@@ -57,7 +57,7 @@ const onClickShadow = () => setShadow(!shadow)
           </td>
         </tr>
       </table>
-      {card && <Frame />}
+       {card && < Card/>}
       {tablel && <TableList />}
     </div>
   );
