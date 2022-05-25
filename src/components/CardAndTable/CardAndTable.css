@@ -28,10 +28,44 @@
 }
 .container1 {
   margin-top: -2.4rem;
-  box-sizing: border-box;
   position: absolute;
-  left: 1000px;
-  width: 11%;
+  right: 5%;
+  width: 12%;
   top: 70px;
   border: 1px solid #3144b4;
+  border-collapse: collapse;
 }
+.button-card {
+  width: 86px;
+  background-color: #f9dad3;
+  height: 34px;
+  border: none;
+}
+.button-text {
+  padding: 6px;
+  align-items: center;
+  max-width: 29px;
+  max-height: 29px;
+}
+.card-text
+{
+  font-family: 'Sora';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 160%;
+color: #3144B4;
+
+}
+/* .button-border{
+  border: 1px solid #3144B4;
+} */
+.bottom-image{
+  box-shadow: 4px 6px 0px -2px #3144b3;
+}
+/* .bottem-image1
+{
+  box-shadow: 4px 6px 0px -2px #3144b3;
+  position: absolute
+  ;
+} */

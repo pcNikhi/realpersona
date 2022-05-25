@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-<<<<<<< HEAD:src/components/TableList/TableList.js
 import "./TableList.css";
 import parvathamma from "../../assests/parvathamma.svg";
 import Line from "../../assests/Line.svg";
 import checkbox from "../../assests/checkbox.svg";
 import download from "../../assests/download.svg";
 import Grid from "../Grid";
-=======
-import './TableList.css'
-import  parvathamma from "./assests/parvathamma.svg";
->>>>>>> bdbfd1fd3cc69e35ce9a8f8a73fa861dadce97c8:src/components/TableList.js
 const TableList = () => {
   const [data, setData] = useState([]);
   const [showSelectedData, setShowSelectedData] = useState(false);

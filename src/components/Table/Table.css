@@ -1,5 +1,5 @@
 .table-container {
-  position: relative;
+
 }
 .table1 {
   border: 1px solid #3144b4;
@@ -13,11 +13,11 @@
 .table-shadow {
   padding-left: 2.5rem;
 }
-.table td {
-  border: 1px solid;
+.table2 {
+  border: 1px solid #3144b4;
   border-color: #3144b4;
 }
-.dropdown {
+.dropdownList {
   font-family: Sora;
   font-size: 20px;
   font-weight: 800;
@@ -25,7 +25,7 @@
   letter-spacing: -0.02em;
   text-align: left;
   color: #3144b4;
-  background-color: #ffffff;
+  background-color: #f9dad3;
   border: none;
 }
 .rowcol {
@@ -37,6 +37,7 @@
   color: #3144b4;
   padding-left: 5%;
   padding-right: 5%;
+  border: 1px solid #3144b4;
 }
 .background {
   position: relative;
@@ -47,4 +48,20 @@
 .card-bg-img {
   width: 125%;
   height: 5rem;
+}
+.optionDrop {
+  background-color: aliceblue;
+  width: 30px;
+  height: 20px;
+  display: block;
+}
+.clear-filters {
+  border: none;
+  background-color: #f9dad3;
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #3144b4;
 }
