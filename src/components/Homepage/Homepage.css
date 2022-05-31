@@ -13,16 +13,13 @@
   color: #3144b4;
   padding: auto;
 }
-/* .design
+.design
 {
-    padding-left: 6.7%;
-    padding-top:4.67%;
-    padding-right: 71%;
-    margin: auto;
-} */
-.heading img {
-  border-radius: 50%;
+   color: #3144b4;
 }
 .topBorder {
   padding-left: 2.563rem;
+}
+.love-color{
+  color: red;
 }

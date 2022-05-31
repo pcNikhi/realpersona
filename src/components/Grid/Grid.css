@@ -6,8 +6,8 @@
   z-index: 9999;
   top: 0px;
   background: #3144b4;
-  top: -92%;
-  right: -10%;
+  top: -74%;
+  right: -7%;
 }
 
 .selected2 {
@@ -93,7 +93,7 @@
   height: 108px;
   padding: 9px 6px 6px 0px;
 }
-.delete1 {
+.delete {
   position: absolute;
   left: 91.25%;
   right: 7.34%;
@@ -113,6 +113,54 @@
   background: #f9dad3;
 }
 .download_bottem {
+  padding: 0.7rem 7.7rem;
+  position: absolute;
+  bottom: 3rem;
+  width: 283px;
+  background-color: #f9dad3;
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  left: 9%;
+  height: 4.2rem;
+  width: 31rem;
+  letter-spacing: -0.05em;
+  color: #3144b4;
+  border: 1px solid #f9dad3;
+}
+.persona_name {
+  position: relative;
+  left: 20px;
+  top: 17px;
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.02em;
+  color: #3144b4;
+}
+.selected_number
+{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: -0.05em;
+  background: white;
+  border: white;
+}
+.download {
+  position: absolute;
+  width: 518px;
+  height: 81px;
+  left: 47px;
+  top: 1119px;
+  background: #f9dad3;
+}
+.download_bottom {
   padding: 0.7rem 7.7rem;
   position: absolute;
   bottom: 3rem;

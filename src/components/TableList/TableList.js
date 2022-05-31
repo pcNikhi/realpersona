@@ -12,6 +12,7 @@ const TableList = () => {
   const [data, setData] = useState([]);
   const { sticky, stickyRef } = useSticky();
   const [showSelectedData, setShowSelectedData] = useState(false);
+  
   useEffect(() => {
     axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
       response.data.map((ele) => {
@@ -73,7 +74,7 @@ const TableList = () => {
                   <span className="col-md-8 location">{details.location}</span>
                   {details?.isSelected && (
                     <img
-                      className="checkbox1"
+                      className="checkbox"
                       src={checkbox}
                       onClick={() => {
                         {
@@ -86,7 +87,7 @@ const TableList = () => {
               </tr>
             ))}
           </table>
-          <div
+          <span
             onClick={() => setShowSelectedData(true)}
             className={classNames("download_data1","button", { sticky })}
             style={{
@@ -95,8 +96,8 @@ const TableList = () => {
                 : '0px'
             }}ref={stickyRef}
           >
-            <img src={download} />
-          </div>
+            <img className="download_img" src={download} />
+          </span>
           {showSelectedData && (
             <Grid data={data} setShowSelectedData={setShowSelectedData} />
           )}

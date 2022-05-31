@@ -71,14 +71,17 @@
 }
 .download_data1
 {
-  background-color:#3144b4;
-  border: 1px solid #3144b4;
   position: absolute;
   right: -7rem;
   top: -18rem;
 }
-div.sticky{
+span.sticky{
   position: fixed;
   right: 0rem;
   top: 0rem;  
+}
+.download_img1 {
+  background-color: #3144b4;
+  width: 48px;
+  height: 48px;
 }

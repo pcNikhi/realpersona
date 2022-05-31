@@ -1,4 +1,4 @@
-import "./Homepage.css";
+import "./Homepage.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import Love from "../../assests/Love.svg";
 import Rectangle_1 from "../../assests/Rectangle_1.svg";

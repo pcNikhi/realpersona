@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Fragment } from "react";
 import "./Card.css";
-import parvathamma from "../../assets/parvathamma.svg";
-import checkbox from "../../assests/checkbox.svg"
+import parvathamma from "../../assests/parvathamma.svg";
+import Check from "../../assests/Check.svg";
 import download from "../../assests/download.svg";
 import Grid from "../Grid/Grid";
 import useSticky from "../StickyHeader/StickyHeader";
 import classNames from "classnames";
+import Ellipse from "../../assests/Ellipse.svg";
+
 const Card = () => {
   const [data, setData] = useState([]);
   const [showSelectedData, setShowSelectedData] = useState(false);
@@ -22,15 +24,23 @@ const Card = () => {
       setData(response.data);
     });
   }, []);
-  
-  const imageClick = (id) => {
-    setData(
-      data.map((el) =>
-        el.persona_id === id
-          ? Object.assign({}, el, { isSelected: !el.isSelected })
-          : el
-      )
-    );
+
+  const imageClick = (details) => {
+    const getSelectedValue = data.filter((ele) => ele.isSelected);
+    if (
+      (getSelectedValue.length < 4 && !details.isSelected) ||
+      details.isSelected
+    ) {
+      setData(
+        data.map((el) =>
+          el.persona_id === details
+            ? Object.assign({}, el, { isSelected: !el.isSelected })
+            : el
+        )
+      );
+    } else {
+      alert("you have selected less than 4");
+    }
   };
   return (
     <Fragment>
@@ -39,7 +49,7 @@ const Card = () => {
           <div
             key={details?.persona_id}
             className={`single-card1 ${
-              details?.isSelected ? "selected-border1" : "normal-border1"
+              details?.isSelected ? "selected-border" : "normal-border1"
             }`}
             onClick={() => imageClick(details?.persona_id)}
           >
@@ -63,7 +73,20 @@ const Card = () => {
                   {details?.isSelected && (
                     <img
                       className="input-box2"
-                      src={checkbox}
+                      src={Check}
+                      onClick={() => {
+                        {
+                          imageClick(details?.persona_id);
+                        }
+                      }}
+                    />
+                  )}
+                </div>
+                <div>
+                  {details?.isSelected && (
+                    <img
+                      className="ellipse"
+                      src={Ellipse}
                       onClick={() => {
                         {
                           imageClick(details?.persona_id);
@@ -76,20 +99,20 @@ const Card = () => {
             </div>
           </div>
         ))}
-         <button
-            onClick={() => setShowSelectedData(true)}
-            className={classNames("download_data","button", { sticky })}
-            style={{
-              height: sticky
-                ? `${stickyRef.current?.clientHeight}px`
-                : '0px'
-            }}ref={stickyRef}
-          >
-            <img src={download} />
-          </button>
-          {showSelectedData && (
-            <Grid data={data} setShowSelectedData={setShowSelectedData} />
-          )}
+        <div
+          onClick={() => setShowSelectedData(true)}
+          className={classNames("download_data", { sticky })}
+          style={{
+            height: sticky ? `${stickyRef.current?.clientHeight}px` : "0px",
+          }}
+          ref={stickyRef}
+        >
+          <img className="download_img" src={download} />
+        </div>
+
+        {showSelectedData && (
+          <Grid data={data} setShowSelectedData={setShowSelectedData} />
+        )}
       </div>
     </Fragment>
   );
