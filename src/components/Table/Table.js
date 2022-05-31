@@ -76,9 +76,7 @@ const Table = () => {
                 value={occupation}
               >
                 <option value={""}>select</option>
-                <option className="optionDrop" value={""}>
-                  Farmer
-                </option>
+                <option className="optionDrop">Farmer</option>
                 <option className="optionDrop">Teacher</option>
                 <option className="optionDrop">Farmer</option>
               </select>
