@@ -29,7 +29,7 @@ const Card = () => {
     ) {
       setData(
         data.map((el) =>
-          el.persona_id === details
+          el.persona_id === details.persona_id
             ? Object.assign({}, el, { isSelected: !el.isSelected })
             : el
         )
@@ -43,14 +43,13 @@ const Card = () => {
       <div className="col-md-12 card-container4">
         {data.map((details) => (
           <div
-            key={details?.persona_id}
             className={`single-card1 ${
               details?.isSelected ? "selected-border" : "normal-border1"
             }`}
-            onClick={() => imageClick(details?.persona_id)}
+            onClick={() => {imageClick(details)}}
           >
             <img
-              className={`image-border1 ${details?.isSelected && "border"}`}
+              className={`image-border1 ${details?.isSelected && "border"}`} key={details?.persona_id}
               src={parvathamma}
               alt="parvathamma"
             />
@@ -70,15 +69,16 @@ const Card = () => {
                     <img
                       className="input-box2"
                       src={Check}
+                      alt="Check"
                       onClick={() => {
                         {
-                          imageClick(details?.persona_id);
+                          imageClick(details);
                         }
                       }}
                     />
                   )}
                 </div>
-                <div>
+                {/* <div>
                   {details?.isSelected && (
                     <img
                       className="ellipse"
@@ -90,7 +90,7 @@ const Card = () => {
                       }}
                     />
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

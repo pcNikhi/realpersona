@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./TableList.css";
 import parvathamma from "../../assests/parvathamma.svg";
-import Line from "../../assests/Line.svg";
 import checkbox from "../../assests/checkbox.svg";
 import download from "../../assests/download.svg";
 import Grid from "../Grid/Grid";
