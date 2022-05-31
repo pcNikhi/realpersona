@@ -5,10 +5,11 @@ import parvathamma from "../../assests/parvathamma.svg";
 import Line from "../../assests/Line.svg";
 import checkbox from "../../assests/checkbox.svg";
 import download from "../../assests/download.svg";
-import Grid from "../Grid";
+import Grid from "../Grid/Grid";
 const TableList = () => {
   const [data, setData] = useState([]);
   const [showSelectedData, setShowSelectedData] = useState(false);
+  
   useEffect(() => {
     axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
       response.data.map((ele) => {
@@ -71,7 +72,7 @@ const TableList = () => {
                   <span className="col-md-8 location">{details.location}</span>
                   {details?.isSelected && (
                     <img
-                      className="checkbox1"
+                      className="checkbox"
                       src={checkbox}
                       onClick={() => {
                         {

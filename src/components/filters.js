@@ -193,7 +193,7 @@ export class Filters extends Component {
     return (
       <div>
         <div class="row" className="hdr">
-          <div class="col-sm-12 btn btn-info">
+          <div className="col-sm-12 btn btn-info">
             Cascading Dropdown in ReactJS
           </div>
         </div>

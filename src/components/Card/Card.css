@@ -1,3 +1,89 @@
+.container-1 {
+  position: relative;
+  width: 100%;
+  top: 690px;
+}
+.personDetail {
+  bottom: 0.35rem;
+  width: 288px;
+  left: 6.5px;
+  padding: 3px 30px 40px;
+  position: absolute;
+  color: #f9dad3;
+  background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
+}
+.text-block1 {
+  padding: 15px 15px 15px 15px;
+  position: relative;
+  width: 258px;
+  color: #f9dad3;
+  background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
+}
+.container-2 {
+  position: absolute;
+  width: 100%;
+  top: 690px;
+  left: 450px;
+}
+.text-block2 {
+  padding: 15px 15px 15px 15px;
+  position: absolute;
+  width: 288px;
+  top: 242.5px;
+  color: #f9dad3;
+  left: 449px;
+  background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
+}
+.p2 {
+  position: absolute;
+  top: 30px;
+  font-family: "Sora";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: #f9dad3;
+}
+
+.container-3 {
+  position: absolute;
+  width: 100%;
+  top: 690px;
+  left: 850px;
+}
+.text-block3 {
+  padding: 15px 15px 15px 15px;
+  position: absolute;
+  width: 288px;
+  top: 369px;
+  color: #f9dad3;
+  left: 838px;
+  background: linear-gradient(0deg, #3144b4 0%, rgba(49, 68, 180, 0) 100%);
+}
+.p3 {
+  position: absolute;
+  top: 30px;
+  font-family: "Sora";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: #f9dad3;
+}
+
+.cardContainer1 {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.checkbox1 {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 248px;
+  top: 308px;
+  background: #f9dad3;
+}
 
 .card-container4 {
   display: flex;
@@ -42,6 +128,12 @@ h4 {
 .input-box2 {
   width: 2rem;
   height: 2rem;
+}
+.ellipse {
+  position: absolute;
+    right: -3.3rem;
+    top: -10rem;
+  z-index: 9999;
 }
 .download_data {
   background-color: #3144b4;
