@@ -5,11 +5,15 @@ import "./Card.css";
 import parvathamma from "../../assests/parvathamma.svg";
 import Check from "../../assests/Check.svg";
 import download from "../../assests/download.svg";
-import Ellipse from "../../assests/Ellipse.svg";
 import Grid from "../Grid/Grid";
+import useSticky from "../StickyHeader/StickyHeader";
+import classNames from "classnames";
+import Ellipse from "../../assests/Ellipse.svg";
+
 const Card = () => {
   const [data, setData] = useState([]);
   const [showSelectedData, setShowSelectedData] = useState(false);
+  const { sticky, stickyRef } = useSticky();
 
   useEffect(() => {
     axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
@@ -95,12 +99,17 @@ const Card = () => {
             </div>
           </div>
         ))}
-        <button
-          className="download_data"
+        <div
           onClick={() => setShowSelectedData(true)}
+          className={classNames("download_data", { sticky })}
+          style={{
+            height: sticky ? `${stickyRef.current?.clientHeight}px` : "0px",
+          }}
+          ref={stickyRef}
         >
-          <img src={download} />
-        </button>
+          <img className="download_img" src={download} />
+        </div>
+
         {showSelectedData && (
           <Grid data={data} setShowSelectedData={setShowSelectedData} />
         )}

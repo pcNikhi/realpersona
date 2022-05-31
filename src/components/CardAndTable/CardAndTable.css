@@ -1,9 +1,10 @@
 .page1 {
   padding: 60px 60px 60px 0px;
   background-color: #f9dad3;
-  /* width: 100%;
-  height: 146vh; */
-  position: relative;
+  display: flex;
+ position: relative;
+ z-index: auto;
+
 }
 .display1 {
   position: absolute;
@@ -14,6 +15,7 @@
   font-size: 14px;
   line-height: 16%;
   color: #3144b4;
+  left: 3%;
 }
 .person1 {
   position: absolute;
@@ -25,11 +27,12 @@
   line-height: 160%;
   letter-spacing: -0.02em;
   color: #3144b4;
+  left: 3%;
 }
 .container1 {
   margin-top: -2.4rem;
   position: absolute;
-  right: 5%;
+  right: 8%;
   width: 12%;
   top: 70px;
   border: 1px solid #3144b4;
@@ -57,9 +60,7 @@ line-height: 160%;
 color: #3144B4;
 
 }
-/* .button-border{
-  border: 1px solid #3144B4;
-} */
+
 .bottom-image{
   box-shadow: 4px 6px 0px -2px #3144b3;
 }
@@ -69,3 +70,6 @@ color: #3144B4;
   position: absolute
   ;
 } */
+.container1 td{
+  border: 1px solid #3144b3;
+}
