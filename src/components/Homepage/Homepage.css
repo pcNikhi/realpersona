@@ -8,7 +8,7 @@
 }
 .heading {
   font-size: 92px;
-  font-style: sora;
+  font-style: 'sora';
   font-weight: bold;
   color: #3144b4;
   padding: auto;

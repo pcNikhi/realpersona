@@ -1,47 +1,71 @@
 import "./Grid.css";
-import "./assets"
-// import parvathamma from "./assets/parvathamma.svg";
-import close from "./assets/close.svg"
-import vector from "./assets/vector.svg"
-const Grid = () => {
-  return (
-    <div className="container-box">
-      <p className="close">Close</p>
+import parvathamma from "../assests/parvathamma.svg";
+import close from "../../assests/close.svg";
+import remove from "../../assests/remove.svg";
+import { useState } from "react";
 
-      <div className="cloz" onClick={()=> console.log("on Click close button---")}>
-        <img src={close} alt="close" />
-      </div>
-      <p className="selected">Selected</p>
-      <p className="date">03/04</p>
+const Grid = ({ data, setShowSelectedData }) => {
+  const filteredData = data.filter((el) => el?.isSelected); 
+//  let index = data.index(filteredData)
+//   console.log(index)
+// const index =(e)=>
+//   filteredData.indexof(e?.persona_id)
+// console.log(index)
+//console.log(filteredData.map(setShowSelectedData))
+//  for(var i=0;i<index;i++ )
+//  {
+//  }
+// }
+// for (var i = 0; i < data.length; i++) { 
+//   if (data[i] == setShowSelectedData) {
+//       return i;
+     
+//   }
+ 
+// }
+// console.log(index)
+// console.log(filteredData.getIndex(setShowSelectedData))
+
+
+  return (
+    <div className="container-box2">
+        <div className="close1 " onClick={() => setShowSelectedData(false)}>
+        <button className="close_button"> close
+        <img src={close} className="" alt="close" />
+        </button>
+        </div>
+      <p className="selected2">
+        Selected
+        <span className="selected_number">0{filteredData.length}/04</span>
+      </p>
       <div className="col-md-5">
-        <div className="box1">
-          {/* <div className="image1">
-              <img src={parvathamma} alt="parvathamma" />
-            </div> */}
-          <span className="col-md-3">Parvatamma Gowda</span>
-          <p className="address">
-            58 Years, Housewife.<br></br>
-            Mysore, Karnataka
-          </p>
-          <div className="delete1">
-            <img src={vector} alt="vector" />
-          </div>
-        </div>
-        <div className="box2">
-          <span className="col-md-7" />
-        </div>
-        <div className="box3">
-          <span className="col-md-2" />
-        </div>
-        <div className="box4">
-          <span className="col-md-2">helloo</span>
-        </div>
-        <div className="download">
-          <span className="col-md-2">Download Real Personas</span>
+        {filteredData.map((e) => {
+          return (
+            <div className="box1" key={e?.persona_id} >
+              <div>
+                <img className="image1" src={parvathamma} alt="parvathamma" />
+              </div>
+              <span className="persona_name">
+                {e.firstname} {e.lastname}
+              </span>
+              <p className="address2">
+                {e.age} Years, {e.occupation}.<br></br>
+                {e.location}, {e.state}
+              </p>
+                <button className="delete_button1 delete1" onClick={() => console.log(e?.persona_id)}>
+                  <img src={remove} alt="remove" ></img>
+                </button>
+            </div>
+          );
+        })}
+        <div
+          className="download1"
+          onClick={() => console.log("on Click close button---")}
+        >
+          <button className="download_bottem">Download Real Personas</button>
         </div>
       </div>
     </div>
   );
 };
-
 export default Grid;

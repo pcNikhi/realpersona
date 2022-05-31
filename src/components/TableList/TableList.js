@@ -5,9 +5,12 @@ import parvathamma from "../../assests/parvathamma.svg";
 import Line from "../../assests/Line.svg";
 import checkbox from "../../assests/checkbox.svg";
 import download from "../../assests/download.svg";
-import Grid from "../Grid";
+import Grid from "../Grid/Grid";
+import classNames from "classnames";
+import useSticky from "../StickyHeader/StickyHeader"
 const TableList = () => {
   const [data, setData] = useState([]);
+  const { sticky, stickyRef } = useSticky();
   const [showSelectedData, setShowSelectedData] = useState(false);
   useEffect(() => {
     axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
@@ -39,7 +42,6 @@ const TableList = () => {
   // console.log(">>>", selectedItems);
   return (
     <div className="tablelist">
-      <div className="bottem-image"></div>
       <div>
         <div>
           <table className="col-md-12 table_grid">
@@ -84,12 +86,17 @@ const TableList = () => {
               </tr>
             ))}
           </table>
-          <button
-            className="download_data1"
+          <div
             onClick={() => setShowSelectedData(true)}
+            className={classNames("download_data1","button", { sticky })}
+            style={{
+              height: sticky
+                ? `${stickyRef.current?.clientHeight}px`
+                : '0px'
+            }}ref={stickyRef}
           >
             <img src={download} />
-          </button>
+          </div>
           {showSelectedData && (
             <Grid data={data} setShowSelectedData={setShowSelectedData} />
           )}

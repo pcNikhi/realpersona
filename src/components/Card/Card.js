@@ -5,10 +5,13 @@ import "./Card.css";
 import parvathamma from "../../assets/parvathamma.svg";
 import checkbox from "../../assests/checkbox.svg"
 import download from "../../assests/download.svg";
-import Grid from "../Grid";
+import Grid from "../Grid/Grid";
+import useSticky from "../StickyHeader/StickyHeader";
+import classNames from "classnames";
 const Card = () => {
   const [data, setData] = useState([]);
   const [showSelectedData, setShowSelectedData] = useState(false);
+  const { sticky, stickyRef } = useSticky();
 
   useEffect(() => {
     axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
@@ -74,8 +77,13 @@ const Card = () => {
           </div>
         ))}
          <button
-            className="download_data"
             onClick={() => setShowSelectedData(true)}
+            className={classNames("download_data","button", { sticky })}
+            style={{
+              height: sticky
+                ? `${stickyRef.current?.clientHeight}px`
+                : '0px'
+            }}ref={stickyRef}
           >
             <img src={download} />
           </button>

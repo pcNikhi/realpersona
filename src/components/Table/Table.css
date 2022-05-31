@@ -65,3 +65,11 @@
   line-height: 160%;
   color: #3144b4;
 }
+table.sticky{
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  width:80%;
+}
+
