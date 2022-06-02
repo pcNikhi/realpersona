@@ -132,8 +132,9 @@ h4 {
 .ellipse {
   position: absolute;
   right: -3.3rem;
-  top: -10rem;
   z-index: 9999;
+  top: 3px;
+  right: -2.12rem;
 }
 .download_data {
   /* background-color: #3144b4; */
