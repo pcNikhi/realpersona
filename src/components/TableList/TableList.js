@@ -5,8 +5,13 @@ import parvathamma from "../../assests/parvathamma.svg";
 import checkbox from "../../assests/checkbox.svg";
 import download from "../../assests/download.svg";
 import Grid from "../Grid/Grid";
+import classNames from "classnames";
+import useSticky from "../StickyHeader/StickyHeader";
+import Ellipse from "../../assests/Ellipse.svg";
+
 const TableList = () => {
   const [data, setData] = useState([]);
+  const { sticky, stickyRef } = useSticky();
   const [showSelectedData, setShowSelectedData] = useState(false);
   
   useEffect(() => {
@@ -39,7 +44,6 @@ const TableList = () => {
   // console.log(">>>", selectedItems);
   return (
     <div className="tablelist">
-      <div className="bottem-image"></div>
       <div>
         <div>
           <table className="col-md-12 table_grid">
@@ -84,12 +88,23 @@ const TableList = () => {
               </tr>
             ))}
           </table>
-          <button
-            className="download_data1"
+          <span
             onClick={() => setShowSelectedData(true)}
+            className={classNames("download_data1","button", { sticky })}
+            style={{
+              height: sticky
+                ? `${stickyRef.current?.clientHeight}px`
+                : '0px'
+            }}ref={stickyRef}
           >
-            <img src={download} />
-          </button>
+            <img className="download_img1" src={download} />
+            <span>
+            {data.filter(el=> el?.isSelected && el?.isSelected).length > 0 ? (
+              <img className="ellipse1" src={Ellipse} alt="Ellipse" />
+            ): null}
+          </span>
+          </span>
+          
           {showSelectedData && (
             <Grid data={data} setShowSelectedData={setShowSelectedData} />
           )}

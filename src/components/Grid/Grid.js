@@ -39,9 +39,9 @@ const Grid = ({ data, setShowSelectedData }) => {
                 {ele.location}, {ele.state}
               </p>
               <div className="delete_person ">
-                <button type="button" className="delete" onClick={e => onDelete(e, ele)}>
+                <div type="button" className="delete" onClick={e => onDelete(e, ele)}>
                   <img src={remove}alt="remove" />
-                </button>
+                </div>
               </div>
             </div>
           );

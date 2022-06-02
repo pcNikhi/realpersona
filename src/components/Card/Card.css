@@ -1,4 +1,4 @@
-.container-1 {
+container-1 {
   position: relative;
   width: 100%;
   top: 690px;
@@ -130,15 +130,28 @@ h4 {
   height: 2rem;
 }
 .ellipse {
-  position: relative;
-  z-index: 9999;
-  top: -598px;
-  right: -801px;
-}
-.download_data {
-  background-color: #3144b4;
-  border: 1px solid #3144b4;
   position: absolute;
   right: -3.3rem;
-  top: -10rem;
+  z-index: 9999;
+  top: 3px;
+  right: -2.12rem;
+}
+.download_data {
+  /* background-color: #3144b4; */
+  /* border: 1px solid #3144b4; */
+  position: absolute;
+  right: -0.9rem;
+  top: -9.1rem;
+  width: 10px;
+  height: 10px;
+}
+div.sticky {
+  position: fixed;
+  right: 2.3rem;
+  top: 0rem;
+}
+.download_img {
+  background-color: #3144b4;
+  width: 48px;
+  height: 48px;
 }

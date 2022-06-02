@@ -5,11 +5,15 @@ import "./Card.css";
 import parvathamma from "../../assests/parvathamma.svg";
 import Check from "../../assests/Check.svg";
 import download from "../../assests/download.svg";
-import Ellipse from "../../assests/Ellipse.svg";
 import Grid from "../Grid/Grid";
+import useSticky from "../StickyHeader/StickyHeader";
+import classNames from "classnames";
+import Ellipse from "../../assests/Ellipse.svg";
+
 const Card = () => {
   const [data, setData] = useState([]);
   const [showSelectedData, setShowSelectedData] = useState(false);
+  const { sticky, stickyRef } = useSticky();
 
   useEffect(() => {
     axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
@@ -38,6 +42,7 @@ const Card = () => {
       alert("you have selected less than 4");
     }
   };
+ ;
   return (
     <Fragment>
       <div className="col-md-12 card-container4">
@@ -46,10 +51,13 @@ const Card = () => {
             className={`single-card1 ${
               details?.isSelected ? "selected-border" : "normal-border1"
             }`}
-            onClick={() => {imageClick(details)}}
+            onClick={() => {
+              imageClick(details);
+            }}
           >
             <img
-              className={`image-border1 ${details?.isSelected && "border"}`} key={details?.persona_id}
+              className={`image-border1 ${details?.isSelected && "border"}`}
+              key={details?.persona_id}
               src={parvathamma}
               alt="parvathamma"
             />
@@ -78,29 +86,26 @@ const Card = () => {
                     />
                   )}
                 </div>
-                {/* <div>
-                  {details?.isSelected && (
-                    <img
-                      className="ellipse"
-                      src={Ellipse}
-                      onClick={() => {
-                        {
-                          imageClick(details?.persona_id);
-                        }
-                      }}
-                    />
-                  )}
-                </div> */}
               </div>
             </div>
           </div>
         ))}
-        <button
-          className="download_data"
+        <div
           onClick={() => setShowSelectedData(true)}
+          className={classNames("download_data", { sticky })}
+          style={{
+            height: sticky ? `${stickyRef.current?.clientHeight}px` : "0px",
+          }}
+          ref={stickyRef}
         >
-          <img src={download} />
-        </button>
+          <img className="download_img" src={download} />
+          <span>
+            {data.filter(el=> el?.isSelected && el?.isSelected).length > 0 ? (
+              <img className="ellipse" src={Ellipse} alt="Ellipse" />
+            ): null}
+          </span>
+        </div>
+
         {showSelectedData && (
           <Grid data={data} setShowSelectedData={setShowSelectedData} />
         )}

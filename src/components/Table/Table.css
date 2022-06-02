@@ -37,6 +37,7 @@
   color: #3144b4;
   padding-left: 5%;
   padding-right: 5%;
+  height: 4.5rem;
   border: 1px solid #3144b4;
 }
 .background {
@@ -65,3 +66,11 @@
   line-height: 160%;
   color: #3144b4;
 }
+table.sticky{
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  width:80%;
+}
+

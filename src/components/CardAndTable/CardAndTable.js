@@ -13,9 +13,9 @@ const CardAndTable = () => {
     setCard(true);
     setTable(false);
   };
-  const [shadow, setShadow] = useState(false)
+  const [shadow, setShadow] = useState(false);
 
-const onClickShadow = () => setShadow(!shadow)
+  const onClickShadow = () => setShadow(!shadow);
   const tableHandler = () => {
     setCard(false);
     setTable(true);
@@ -38,17 +38,16 @@ const onClickShadow = () => setShadow(!shadow)
       <p className="person1">{users.length} Personas</p>
       <table className="container1">
         <tr>
-          <td className={`button-border ${
-                  card ? "bottom-image" : ""
-                }`} onClick={onClickShadow}>
+          <td
+            className={`button-border ${card ? "bottom-image" : ""}`}
+            onClick={onClickShadow}
+          >
             <button className="button-card " onClick={cardHandler}>
               <img className="button-text" src={Group7} alt="card"></img>
               <grid className="card-text"> Card</grid>
             </button>
           </td>
-          <td className={`button-border ${
-                  tablel ? "bottom-image" : ""
-                }`}>
+          <td className={`button-border ${tablel ? "bottom-image" : ""}`}>
             <button className="button-card" onClick={tableHandler}>
               <img className="button-text" src={table} alt="table"></img>
               <grid className="card-text">Table</grid>
@@ -56,7 +55,7 @@ const onClickShadow = () => setShadow(!shadow)
           </td>
         </tr>
       </table>
-       {card && < Card/>}
+      {card && <Card />}
       {tablel && <TableList />}
     </div>
   );
