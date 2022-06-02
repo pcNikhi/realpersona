@@ -14,7 +14,6 @@ const CardAndTable = () => {
     setTable(false);
   };
   const [shadow, setShadow] = useState(false);
-
   const onClickShadow = () => setShadow(!shadow);
   const tableHandler = () => {
     setCard(false);

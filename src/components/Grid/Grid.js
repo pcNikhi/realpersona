@@ -2,7 +2,7 @@ import "./Grid.css";
 import parvathamma from "../../assests/parvathamma.svg";
 import close from "../../assests/close.svg";
 import remove from "../../assests/remove.svg";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 
 const Grid = ({ data, setShowSelectedData }) => {
   const [filteredData, setFilteredData] = useState(data.filter((el) => el?.isSelected)); 
@@ -12,6 +12,7 @@ const Grid = ({ data, setShowSelectedData }) => {
       newVar.splice(getIndex,1);
       setFilteredData(newVar);
     }
+
   return (
     <div className="container-box2">
         <div className="close1 " onClick={() => setShowSelectedData(false)}>

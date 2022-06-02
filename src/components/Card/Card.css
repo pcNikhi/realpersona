@@ -85,6 +85,7 @@ container-1 {
   background: #f9dad3;
 }
 
+
 .card-container4 {
   display: flex;
   flex-wrap: wrap;
@@ -125,10 +126,21 @@ h4 {
   justify-content: space-between;
 }
 
-.input-box2 {
+/* .input-box2{
   width: 2rem;
   height: 2rem;
+} */
+.input-box2  {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 4rem
 }
+/* .input-box2[type='checkbox']:checked{
+  accent-color:#ffffff;
+  background-color: #ffffff;
+  color: #3144b4;
+  content: white;
+} */
 .ellipse {
   position: absolute;
   right: -3.3rem;
@@ -152,4 +164,31 @@ div.sticky {
   background-color: #3144b4;
   width: 48px;
   height: 48px;
+}
+.persona_fname
+{
+font-family: 'Sora';
+font-style: normal;
+font-weight: 800;
+font-size: 28px;
+color: #F9DAD3;
+position:relative;
+bottom: rem;
+}
+.persona_lname
+{
+font-family: 'Sora';
+font-style: normal;
+font-weight: 800;
+font-size: 28px;
+color: #F9DAD3;
+position: relative;
+
+}
+.persona_age{
+  position: relative;
+}
+.persona_location
+{
+  position:relative;
 }

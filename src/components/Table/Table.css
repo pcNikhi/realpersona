@@ -43,7 +43,7 @@
 .background {
   position: relative;
   display: flex;
-  top: -1.5rem;
+  top: -2.5rem;
   align-items: flex-end;
 }
 .card-bg-img {
@@ -65,6 +65,8 @@
   font-size: 14px;
   line-height: 160%;
   color: #3144b4;
+  position: sticky;
+  /* z-index: 9999; */
 }
 table.sticky{
   position: fixed;
@@ -73,4 +75,5 @@ table.sticky{
   box-shadow: none;
   width:80%;
 }
+
 
