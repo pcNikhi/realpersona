@@ -60,20 +60,26 @@ const Card = () => {
             />
 
             <div className="card-details-con1">
-              <h4>
-                {details.firstname} {details.lastname}
-              </h4>
+              <div className="persona_fname">
+                {details.firstname} 
+              </div>
+              <div className="persona_lname">{details.lastname}</div>
               <div className="dtls-con1">
                 <div>
-                  <p>
-                    {details.age} years {details.occupation} {details.location}{" "}
-                  </p>
+                <div className="persona_age">
+                    {details.age} years {details.occupation} 
+                </div>
+                <div className="persona_location" >
+                {details.location}{" "}   
+                </div>
                 </div>
                 <div>
                   {details?.isSelected && (
-                    <img
+                    <input
                       className="input-box2"
-                      src={Check}
+                      // src={Check}
+                      type="checkbox"
+                      checked
                       onClick={() => {
                         {
                           imageClick(details?.persona_id);
@@ -101,9 +107,9 @@ const Card = () => {
         ))}
         <div
           onClick={() => setShowSelectedData(true)}
-          className={classNames("download_data", { sticky })}
+          className={classNames("download_data", "", { sticky })}
           style={{
-            height: sticky ? `${stickyRef.current?.clientHeight}px` : "0px",
+            height: sticky ? `${stickyRef.current?.clientHeight}px` : "px",
           }}
           ref={stickyRef}
         >

@@ -89,7 +89,7 @@ const TableList = () => {
           </table>
           <span
             onClick={() => setShowSelectedData(true)}
-            className={classNames("download_data1","button", { sticky })}
+            className={classNames("download_data1", { sticky })}
             style={{
               height: sticky
                 ? `${stickyRef.current?.clientHeight}px`
