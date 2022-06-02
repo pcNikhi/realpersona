@@ -33,7 +33,7 @@ const Card = () => {
     ) {
       setData(
         data.map((el) =>
-          el.persona_id === details
+          el.persona_id === details.persona_id
             ? Object.assign({}, el, { isSelected: !el.isSelected })
             : el
         )
@@ -42,19 +42,22 @@ const Card = () => {
       alert("you have selected less than 4");
     }
   };
+ ;
   return (
     <Fragment>
       <div className="col-md-12 card-container4">
         {data.map((details) => (
           <div
-            key={details?.persona_id}
             className={`single-card1 ${
               details?.isSelected ? "selected-border" : "normal-border1"
             }`}
-            onClick={() => imageClick(details?.persona_id)}
+            onClick={() => {
+              imageClick(details);
+            }}
           >
             <img
               className={`image-border1 ${details?.isSelected && "border"}`}
+              key={details?.persona_id}
               src={parvathamma}
               alt="parvathamma"
             />
@@ -75,27 +78,13 @@ const Card = () => {
                 </div>
                 <div>
                   {details?.isSelected && (
-                    <input
-                      className="input-box2"
-                      // src={Check}
-                      type="checkbox"
-                      checked
-                      onClick={() => {
-                        {
-                          imageClick(details?.persona_id);
-                        }
-                      }}
-                    />
-                  )}
-                </div>
-                <div>
-                  {details?.isSelected && (
                     <img
-                      className="ellipse"
-                      src={Ellipse}
+                      className="input-box2"
+                      src={Check}
+                      alt="Check"
                       onClick={() => {
                         {
-                          imageClick(details?.persona_id);
+                          imageClick(details);
                         }
                       }}
                     />
@@ -114,6 +103,11 @@ const Card = () => {
           ref={stickyRef}
         >
           <img className="download_img" src={download} />
+          <span>
+            {data.filter(el=> el?.isSelected && el?.isSelected).length > 0 ? (
+              <img className="ellipse" src={Ellipse} alt="Ellipse" />
+            ): null}
+          </span>
         </div>
 
         {showSelectedData && (

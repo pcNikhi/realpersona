@@ -133,20 +133,20 @@ h4 {
 .input-box2  {
   width: 2rem;
   height: 2rem;
-  background-color: white;
   margin-left: 4rem
 }
-.input-box2[type='checkbox']:checked{
+/* .input-box2[type='checkbox']:checked{
   accent-color:#ffffff;
   background-color: #ffffff;
-  /* color: #3144b4; */
+  color: #3144b4;
   content: white;
-}
+} */
 .ellipse {
   position: absolute;
   right: -3.3rem;
-  top: -10rem;
   z-index: 9999;
+  top: 3px;
+  right: -2.12rem;
 }
 .download_data {
   /* background-color: #3144b4; */

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./TableList.css";
 import parvathamma from "../../assests/parvathamma.svg";
-import Line from "../../assests/Line.svg";
 import checkbox from "../../assests/checkbox.svg";
 import download from "../../assests/download.svg";
 import Grid from "../Grid/Grid";
 import classNames from "classnames";
-import useSticky from "../StickyHeader/StickyHeader"
+import useSticky from "../StickyHeader/StickyHeader";
+import Ellipse from "../../assests/Ellipse.svg";
+
 const TableList = () => {
   const [data, setData] = useState([]);
   const { sticky, stickyRef } = useSticky();
@@ -96,8 +97,14 @@ const TableList = () => {
                 : '0px'
             }}ref={stickyRef}
           >
-            <img className="download_img" src={download} />
+            <img className="download_img1" src={download} />
+            <span>
+            {data.filter(el=> el?.isSelected && el?.isSelected).length > 0 ? (
+              <img className="ellipse1" src={Ellipse} alt="Ellipse" />
+            ): null}
           </span>
+          </span>
+          
           {showSelectedData && (
             <Grid data={data} setShowSelectedData={setShowSelectedData} />
           )}

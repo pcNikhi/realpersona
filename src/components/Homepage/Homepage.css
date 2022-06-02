@@ -1,6 +1,5 @@
 .Homepage {
   background-color: #f9dad3;
-  width: 100%;
 }
 .container {
   padding-left: 5.25rem;
@@ -17,6 +16,9 @@
 {
    color: #3144b4;
 }
+/* .heading img {
+  border-radius: 100%;
+} */
 .topBorder {
   padding-left: 2.563rem;
 }
