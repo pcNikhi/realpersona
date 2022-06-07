@@ -4,9 +4,10 @@ import close from "../../assests/close.svg";
 import remove from "../../assests/remove.svg";
 import React, {useState } from "react";
 
-const Grid = ({ data, setShowSelectedData }) => {
+const Grid = ({ data, setShowSelectedData, onChildDelete }) => {
   const [filteredData, setFilteredData] = useState(data.filter((el) => el?.isSelected)); 
     const onDelete = (e, item) =>{
+      onChildDelete(item.persona_id)
       const getIndex = filteredData.findIndex(x => x.persona_id === item.persona_id);
       const newVar=[...filteredData]
       newVar.splice(getIndex,1);
@@ -40,7 +41,7 @@ const Grid = ({ data, setShowSelectedData }) => {
                 {ele.location}, {ele.state}
               </p>
               <div className="delete_person ">
-                <div type="button" className="delete" onClick={e => onDelete(e, ele)}>
+                <div type="button" className="delete" onClick={e=> onDelete(e, ele)}>
                   <img src={remove}alt="remove" />
                 </div>
               </div>

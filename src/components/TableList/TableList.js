@@ -9,20 +9,20 @@ import classNames from "classnames";
 import useSticky from "../StickyHeader/StickyHeader";
 import Ellipse from "../../assests/Ellipse.svg";
 
-const TableList = () => {
-  const [data, setData] = useState([]);
+const TableList = ({tableUsers}) => {
+  const [data, setData] = useState(tableUsers);
   const { sticky, stickyRef } = useSticky();
   const [showSelectedData, setShowSelectedData] = useState(false);
   
-  useEffect(() => {
-    axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
-      response.data.map((ele) => {
-        ele.isSelected = false;
-        return ele;
-      });
-      setData(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
+  //     response.data.map((ele) => {
+  //       ele.isSelected = false;
+  //       return ele;
+  //     });
+  //     setData(response.data);
+  //   });
+  // }, []);
 
   const tableClick = (details) => {
     const getSelectedValue = data.filter((ele) => ele.isSelected);
