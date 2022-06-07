@@ -149,8 +149,9 @@
     font-size: 20px;
     line-height: 160%;
     letter-spacing: -0.05em;
-  background: white;
-  border: white;
+  background: none;
+  padding: 7px;
+  
 }
 .download {
   position: absolute;

@@ -10,20 +10,33 @@ import useSticky from "../StickyHeader/StickyHeader";
 import classNames from "classnames";
 import Ellipse from "../../assests/Ellipse.svg";
 
-const Card = () => {
-  const [data, setData] = useState([]);
+const Card = ({cardUsers}) => {
+  const [data, setData] = useState(cardUsers);
   const [showSelectedData, setShowSelectedData] = useState(false);
+  const [filteredData, setFilteredData] = useState(false)
   const { sticky, stickyRef } = useSticky();
 
-  useEffect(() => {
-    axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
-      response.data.map((ele) => {
-        ele.isSelected = false;
-        return ele;
-      });
-      setData(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
+  //     response.data.map((ele) => {
+  //       ele.isSelected = false;
+  //       return ele;
+  //     });
+  //     setData(response.data);
+  //   });
+  // }, []);
+
+  const onDeleteParent = (personID) =>{
+    setData(
+      data.map((el) =>
+        el.persona_id === personID
+          ? Object.assign({}, el, { isSelected: false })
+          : el
+      )
+    );
+    console.log(personID)
+    console.log("coming here")
+  }
 
   const imageClick = (details) => {
     const getSelectedValue = data.filter((ele) => ele.isSelected);
@@ -42,7 +55,6 @@ const Card = () => {
       alert("you have selected less than 4");
     }
   };
- ;
   return (
     <Fragment>
       <div className="col-md-12 card-container4">
@@ -53,6 +65,7 @@ const Card = () => {
             }`}
             onClick={() => {
               imageClick(details);
+              console.log("...",imageClick)
             }}
           >
             <img
@@ -63,18 +76,14 @@ const Card = () => {
             />
 
             <div className="card-details-con1">
-              <div className="persona_fname">
-                {details.firstname} 
-              </div>
+              <div className="persona_fname">{details.firstname}</div>
               <div className="persona_lname">{details.lastname}</div>
               <div className="dtls-con1">
                 <div>
-                <div className="persona_age">
-                    {details.age} years {details.occupation} 
-                </div>
-                <div className="persona_location" >
-                {details.location}{" "}   
-                </div>
+                  <div className="persona_age">
+                    {details.age} years {details.occupation}
+                  </div>
+                  <div className="persona_location">{details.location} </div>
                 </div>
                 <div>
                   {details?.isSelected && (
@@ -104,15 +113,20 @@ const Card = () => {
         >
           <img className="download_img" src={download} />
           <span>
-            {data.filter(el=> el?.isSelected && el?.isSelected).length > 0 ? (
+            {data.filter((el) => el?.isSelected && el?.isSelected).length >
+            0 ? (
               <img className="ellipse" src={Ellipse} alt="Ellipse" />
-            ): null}
+            ) : null}
           </span>
         </div>
 
         {showSelectedData && (
-          <Grid data={data} setShowSelectedData={setShowSelectedData} />
+          <Grid data={data} onChildDelete={e => onDeleteParent(e)} setShowSelectedData={setShowSelectedData} />
         )}
+        {filteredData && (
+         <Grid data={data} onChildDelete={onDeleteParent} setFilteredData={setFilteredData}/>
+        )
+}
       </div>
     </Fragment>
   );

@@ -54,8 +54,9 @@ const CardAndTable = () => {
           </td>
         </tr>
       </table>
-      {card && <Card />}
-      {tablel && <TableList />}
+      
+      {users.length > 0 && card && <Card cardUsers={users} />}
+      {users.length > 0 && tablel && <TableList tableUsers={users}/>}
     </div>
   );
 };
