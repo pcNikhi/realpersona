@@ -1,0 +1,92 @@
+.tablelist {
+  margin-top: 7%;
+  width: 100%;
+  position: relative;
+}
+.person_name {
+  font-family: Sora;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 121px;
+  letter-spacing: -0.02rem;
+}
+.table_grid {
+  text-align: center;
+  /* align-items: center; */
+  background-color: aliceblue;
+  margin-top: 1%;
+  position: relative;
+  width: 94%;
+  left: 2.5rem;
+  color: #3144b4;
+  margin-bottom: 10px;
+  /* border: 12px solid #f9dad3; */
+}
+.table_grid td {
+  border: 1px solid #f9dad3;
+}
+.person_image {
+  float: left;
+  width: 100px;
+  height: 101px;
+  margin: 10px;
+}
+.text {
+  font-family: Sora;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+} 
+.row-border {
+  bottom: 6px;
+  padding-bottom: 1em;
+}
+.table_grid{
+  padding-bottom: 1em;
+}
+.checkbox1 {
+  width: 30px;
+  height: 30px;
+  border: blue;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.row-border {
+  border: 2px solid #3144b4;
+}
+.selected-border {
+  border: 12px solid #3144b4;
+  /* z-index: 9999; */
+}
+.normal-border {
+  border: 2px solid transparent;
+  padding-top: 10px; 
+  padding-bottom:10px
+}
+.location
+{
+  padding: 20px 40px 20px 20px;
+  float: left;
+}
+.download_data1
+{
+  position: absolute;
+  right: -7rem;
+  top: -18rem;
+}
+span.sticky{
+  position: fixed;
+  right: 0rem;
+  top: 0rem;  
+}
+.download_img1 {
+  background-color: #3144b4;
+  width: 48px;
+  height: 48px;
+}
+.ellipse1 {
+  position: absolute;
+    top: 3px;
+    right: 3px;
+}
