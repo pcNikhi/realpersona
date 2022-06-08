@@ -4,21 +4,33 @@ import background from "../../assests/background.svg";
 import CardAndTable from "../CardAndTable/CardAndTable";
 import classNames from "classnames";
 import useSticky from "../StickyHeader/StickyHeader";
-
+import headerPhoto from "../../assests/headerPhoto.svg";
+import TableList from "../TableList/TableList";
+import Card from "../Card/Card";
 const Table = () => {
   const { sticky, stickyRef } = useSticky();
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
-  const [location, setLocation] = useState("");
+  // const [location, setLocation] = useState("");
   const [occupation, setOccupation] = useState("");
+  const [filterLocation, setfilterLocation] = useState("");
+  const [filterOccupation, setFilterOccupation] = useState("");
+  const selectLocation = (filterLocation) => {
+    setfilterLocation(filterLocation);
+    console.log(filterLocation);
+  };
+  const selectOccupation = (filterOccupation) => {
+    setFilterOccupation(filterOccupation);
+    console.log(filterOccupation);
+  };
   const handleReset = (e) => {
     setAge((e.target.value = ""));
     setGender((e.target.value = ""));
-    setLocation((e.target.value = ""));
-    setOccupation((e.target.value = ""));
+    // setLocation((e.target.value = ""));
+    setfilterLocation((e.target.value = ""));
+    setFilterOccupation((e.target.value = ""));
   };
-
-
+  const card = {Card}
   return (
     <div className="table-container">
       <div className="table-shadow">
@@ -30,7 +42,12 @@ const Table = () => {
           ref={stickyRef}
         >
           <tr>
-            <td className="col-md-3 rowcol">
+            <td
+              className={` ${sticky ? "table-photo1 col-2" : "table-photo"} `}
+            >
+              <img className="stickyphoto" src={headerPhoto}></img>
+            </td>
+            <td className="col-md-2 rowcol">
               Age
               <select
                 className="dropdownList col-md-12"
@@ -40,7 +57,7 @@ const Table = () => {
                 <option className="optionDrop" value="18-30 years">
                   18-30 years
                 </option>
-                <option className="optionDrop" value="30-45 year">
+                <option className="optionDrop" value="30-45 years">
                   30-45 years
                 </option>
                 <option className="optionDrop" value="45-60 years">
@@ -51,7 +68,7 @@ const Table = () => {
                 </option>
               </select>
             </td>
-            <td className="col-md-3 rowcol">
+            <td className="col-md-2 rowcol">
               Gender
               <select
                 className="dropdownList col-md-12"
@@ -64,32 +81,66 @@ const Table = () => {
                 <option className="optionDrop">Female</option>
               </select>
             </td>
-            <td className="col-md-3 rowcol">
+            <td className="col-md-2 rowcol">
               Location
               <select
                 className="dropdownList col-md-12"
-                onChange={(e) => setLocation(e.target.value)}
-                value={location}
+                onChange={(e) => {
+                  // setLocation(e.target.value);
+                  selectLocation(e.currentTarget.value);
+                }}
+                value={selectLocation}
               >
-                <option className="optionDrop" value={""}>
-                  Karnataka
+                <option className="optionDrop" value="Delhi">
+                  Delhi
                 </option>
-                <option className="optionDrop">Maharatra</option>
-                <option className="optionDrop">Goa</option>
+                <option className="optionDrop" value="Mumbai">
+                  mumbai
+                </option>
+                <option className="optionDrop" value="Hyderabad">
+                  Hyderabad
+                </option>
+                <option className="optionDrop" value="Bangalore">
+                  Bangalore
+                </option>
               </select>
             </td>
-            <td className="col-md-3 rowcol">
+            <td className="col-md-2 rowcol">
               Occupation
               <select
                 className="dropdownList col-md-12"
-                onChange={(e) => setOccupation(e.target.value)}
-                value={occupation}
+                onChange={(e) => selectOccupation(e.currentTarget.value)}
+                value={selectOccupation}
+                // value={filterLocation}
+                // onChange={(e) => }
               >
-                <option value={""}>select</option>
-                <option className="optionDrop">Farmer</option>
-                <option classNamzee="optionDrop">Teacher</option>
-                <option className="optionDrop">Farmer</option>
+                {/* <option value={""}>select</option> */}
+                <option className="optionDrop" value="Labour">
+                  Labour
+                </option>
+                <option classNamzee="optionDrop" value="Receptionist">
+                  Receptionist
+                </option>
+                <option className="optionDrop" value="CEO">
+                  CEO
+                </option>
+                <option className="optionDrop" value="Software Engineer">
+                  Software Engineer
+                </option>
               </select>
+            </td>
+            <td
+              className={` ${
+                sticky ? "table-filters col-md-2" : "table-photo"
+              } `}
+            >
+              <button
+                type="button"
+                className="clear-filters"
+                onClick={handleReset}
+              >
+                Clear Filters
+              </button>
             </td>
           </tr>
         </table>
@@ -107,143 +158,13 @@ const Table = () => {
           </button>
         </p>
       </div>
+      {
+        <Card
+          filterLocation={filterLocation}
+          filterOccupation={filterOccupation}
+        />
+      }
     </div>
   );
 };
 export default Table;
-
-// import { useEffect, useState } from "react";
-// // import "./styles.css";
-// export default function Filters() {
-//   const carList = [
-//     {
-//       name: "BMW M6",
-//       url:
-//         "https://mediapool.bmwgroup.com/cache/P9/201411/P90169551/P90169551-the-new-bmw-m6-coup-exterior-12-2014-600px.jpg",
-//       release_year: 2020
-//     },
-//     {
-//       name: "VW Polo",
-//       url:
-//         "https://cdn.euroncap.com/media/30740/volkswagen-polo-359-235.jpg?mode=crop&width=359&height=235",
-//       release_year: 2018
-//     },
-//     {
-//       name: "Audi S6",
-//       url:
-//         "https://www.motortrend.com/uploads/sites/5/2020/03/6-2020-audi-s6.jpg?fit=around%7C875:492.1875",
-//       release_year: 2020
-//     },
-//     {
-//       name: "BMW M2",
-//       url:
-//         "https://imgd.aeplcdn.com/0x0/cw/ec/37092/BMW-M2-Exterior-141054.jpg?wm=0",
-//       release_year: 2019
-//     },
-//     {
-//       name: "Audi A3",
-//       url: "https://cdn.motor1.com/images/mgl/BEooZ/s3/2021-audi-s3.jpg",
-//       release_year: 2019
-//     }
-//   ];
-//   // List of all cars satisfing all the filters
-//   const [filteredList, setFilteredList] = useState(carList);
-//   // Selected Brand name filter
-//   const [selectedBrand, setSelectedBrand] = useState("");
-//   // Selected Year filter
-//   const [selectedYear, setSelectedYear] = useState();
-
-//   const filterByBrand = (filteredData) => {
-//     // Avoid filter for empty string
-//     if (!selectedBrand) {
-//       return filteredData;
-//     }
-
-//     const filteredCars = filteredData.filter(
-//       (car) => car.name.split(" ").indexOf(selectedBrand) !== -1
-//     );
-//     return filteredCars;
-//   };
-//   const filterByYear = (filteredData) => {
-//     // Avoid filter for null value
-//     if (!selectedYear) {
-//       return filteredData;
-//     }
-
-//     const filteredCars = filteredData.filter(
-//       (car) => car.release_year === selectedYear
-//     );
-//     return filteredCars;
-//   };
-
-//   // Update seletedBrand state
-//   const handleBrandChange = (event) => {
-//     setSelectedBrand(event.target.value);
-//   };
-
-//   // Toggle seletedYear state
-//   const handleYearChange = (event) => {
-//     const inputYear = Number(event.target.id);
-
-//     if (inputYear === selectedYear) {
-//       setSelectedYear("");
-//     } else {
-//       setSelectedYear(inputYear);
-//     }
-//   };
-
-//   useEffect(() => {
-//     var filteredData = filterByBrand(carList);
-//     filteredData = filterByYear(filteredData);
-//     setFilteredList(filteredData);
-//   }, [selectedBrand, selectedYear]);
-
-//   return (
-//     <div className="App">
-//       <div className="brand-filter">
-//         <div>Filter by Brand :</div>
-//         <select
-//           id="brand-input"
-//           value={selectedBrand}
-//           onChange={handleBrandChange}
-//         >
-//           <option value="">All</option>
-//           <option value="BMW">BMW</option>
-//           <option value="VW">VW</option>
-//           <option value="Audi">Audi</option>
-//         </select>
-//       </div>
-//       <div>Filter by Year</div>
-//       <div id="year-options" onClick={handleYearChange}>
-//         <div
-//           className={selectedYear === 2018 ? "active-option" : "filter-option"}
-//           id="2018"
-//         >
-//           2018
-//         </div>
-//         <div
-//           className={selectedYear === 2019 ? "active-option" : "filter-option"}
-//           id="2019"
-//         >
-//           2019
-//         </div>
-//         <div
-//           className={selectedYear === 2020 ? "active-option" : "filter-option"}
-//           id="2020"
-//         >
-//           2020
-//         </div>
-//       </div>
-
-//       <div id="car-list">
-//         {filteredList.map((item, index) => (
-//           <div className="car-item" key={index}>
-//             <div className="car-name">{`Name: ${item.name}`}</div>
-//             <div className="car-year">{`Year: ${item.release_year}`}</div>
-//             <img className="car-image" src={item.url} alt="car-img" />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
