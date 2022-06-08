@@ -5,10 +5,11 @@ import table from "../../assests/table.svg";
 import TableList from "../TableList/TableList";
 import Card from "../Card/Card";
 //import Card from "./components/Card"
-const CardAndTable = () => {
+const CardAndTable = ({ filterLocation, filterOccupation }) => {
   const [card, setCard] = useState(true);
   const [tablel, setTable] = useState(false);
   const [users, setUsers] = useState([]);
+  const [data, setData] = useState('')
   const cardHandler = () => {
     setCard(true);
     setTable(false);
@@ -31,6 +32,14 @@ const CardAndTable = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const  filteredOccupation = users.filter(({ occupation }) => {
+    return filterOccupation ? occupation === filterOccupation : users;
+  });
+  const filteredLocation = users.filter(({ location }) => {
+    return filterLocation ? location === filterLocation : users;
+  });
+  
   return (
     <div className="page1 col-md-12">
       <p className="display1">Displaying</p>
@@ -54,9 +63,9 @@ const CardAndTable = () => {
           </td>
         </tr>
       </table>
-      
-      {users.length > 0 && card && <Card cardUsers={users} />}
-      {users.length > 0 && tablel && <TableList tableUsers={users}/>}
+
+      {users.length > 0 && card && <Card cardUsers={users} filteredOccupation={filteredOccupation&&filteredLocation}/>}
+      {users.length > 0 && tablel && <TableList tableUsers={users} filteredOccupation={filteredOccupation&&filteredLocation} />}
     </div>
   );
 };

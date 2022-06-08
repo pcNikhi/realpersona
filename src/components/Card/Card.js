@@ -11,7 +11,7 @@ import classNames from "classnames";
 import Ellipse from "../../assests/Ellipse.svg";
 import Table from "../Table/Table";
 
-const Card = ({cardUsers}) => {
+const Card = ({cardUsers,filteredOccupation}) => {
   const [data, setData] = useState(cardUsers);
   const [showSelectedData, setShowSelectedData] = useState(false);
   const [filteredData, setFilteredData] = useState(false)
@@ -59,10 +59,10 @@ const Card = ({cardUsers}) => {
   return (
     <Fragment>
       <div className="col-md-12 card-container4">
-        {data.map((details) => (
+        {filteredOccupation.map((details) => (
           <div
             className={`single-card1 ${
-              details?.isSelected ? "selected-border" : "normal-border1"
+              details?.isSelected ? "selected-border1" : "normal-border1"
             }`}
             onClick={() => {
               imageClick(details);
@@ -121,7 +121,7 @@ const Card = ({cardUsers}) => {
               ) : null}
             </span>
           </div>
-        ))}
+
         <div
           onClick={() => setShowSelectedData(true)}
           className={classNames("download_data", "", { sticky })}

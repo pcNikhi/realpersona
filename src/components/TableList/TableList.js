@@ -9,7 +9,7 @@ import classNames from "classnames";
 import useSticky from "../StickyHeader/StickyHeader";
 import Ellipse from "../../assests/Ellipse.svg";
 
-const TableList = ({tableUsers}) => {
+const TableList = ({tableUsers,filteredOccupation}) => {
   const [data, setData] = useState(tableUsers);
   const { sticky, stickyRef } = useSticky();
   const [showSelectedData, setShowSelectedData] = useState(false);
@@ -47,7 +47,7 @@ const TableList = ({tableUsers}) => {
       <div>
         <div>
           <table className="col-md-12 table_grid">
-            {data.map((details) => (
+            {filteredOccupation.map((details) => (
               <tr
                 className={`row-size ${
                   details?.isSelected ? "selected-border" : "normal-border"

@@ -11,8 +11,8 @@ const Table = () => {
   const { sticky, stickyRef } = useSticky();
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
-  // const [location, setLocation] = useState("");
-  const [occupation, setOccupation] = useState("");
+  const [location, setLocation] = useState("");
+  // const [occupation, setOccupation] = useState("");
   const [filterLocation, setfilterLocation] = useState("");
   const [filterOccupation, setFilterOccupation] = useState("");
   const selectLocation = (filterLocation) => {
@@ -30,12 +30,12 @@ const Table = () => {
     setfilterLocation((e.target.value = ""));
     setFilterOccupation((e.target.value = ""));
   };
-  const card = {Card}
   return (
+    <div>    
     <div className="table-container">
-      <div className="table-shadow">
+      <div className="table-shadow col-md-8">
         <table
-          className={classNames("table1 col-md-12", "table", { sticky })}
+          className={classNames("table1 col-md-12", "table", { sticky }) }
           style={{
             height: sticky ? `${stickyRef.current?.clientHeight}px` : "0px",
           }}
@@ -89,7 +89,7 @@ const Table = () => {
                   // setLocation(e.target.value);
                   selectLocation(e.currentTarget.value);
                 }}
-                value={selectLocation}
+                value={filterLocation}
               >
                 <option className="optionDrop" value="Delhi">
                   Delhi
@@ -110,11 +110,8 @@ const Table = () => {
               <select
                 className="dropdownList col-md-12"
                 onChange={(e) => selectOccupation(e.currentTarget.value)}
-                value={selectOccupation}
-                // value={filterLocation}
-                // onChange={(e) => }
+                value={filterOccupation}
               >
-                {/* <option value={""}>select</option> */}
                 <option className="optionDrop" value="Labour">
                   Labour
                 </option>
@@ -145,7 +142,7 @@ const Table = () => {
           </tr>
         </table>
       </div>
-
+      <div className="col-md-8">
       <div className="col-md-8 background">
         <img
           src={background}
@@ -158,12 +155,14 @@ const Table = () => {
           </button>
         </p>
       </div>
-      {/* {
-        <Card
-          filterLocation={filterLocation}
-          filterOccupation={filterOccupation}
-        />
-      } */}
+      </div>
+    </div>
+      {
+      <CardAndTable
+        filterLocation={filterLocation}
+        filterOccupation={filterOccupation}
+      />
+    }
     </div>
   );
 };

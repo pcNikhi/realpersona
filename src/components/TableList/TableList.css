@@ -42,9 +42,9 @@
   bottom: 6px;
   padding-bottom: 1em;
 }
-.table_grid{
+/* .table_grid{
   padding-bottom: 1em;
-}
+} */
 .checkbox1 {
   width: 30px;
   height: 30px;
@@ -56,7 +56,7 @@
   border: 2px solid #3144b4;
 }
 .selected-border {
-  border: 12px solid #3144b4;
+  border: 4px solid #3144b4;
   /* z-index: 9999; */
 }
 .normal-border {

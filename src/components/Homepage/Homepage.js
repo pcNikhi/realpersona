@@ -23,11 +23,12 @@ const Homepage = () => {
               </div> 
             </div>
           </div>
-          <nav >
+          
+        </div>
+        <nav >
             <Table />
           </nav>
-        </div>
-        <CardAndTable />
+        {/* <CardAndTable /> */}
       </div>
     </div>
   );
