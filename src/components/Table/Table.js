@@ -5,14 +5,14 @@ import background from "../../assests/background.svg";
 import classNames from "classnames";
 import useSticky from "../StickyHeader/StickyHeader";
 import headerPhoto from "../../assests/headerPhoto.svg";
-import TableList from "../TableList/TableList";
+// import TableList from "../TableList/TableList";
 import Card from "../Card/Card";
 const Table = () => {
   const { sticky, stickyRef } = useSticky();
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   // const [location, setLocation] = useState("");
-  const [occupation, setOccupation] = useState("");
+  // const [occupation, setOccupation] = useState("");
   const [filterLocation, setfilterLocation] = useState("");
   const [filterOccupation, setFilterOccupation] = useState("");
   const selectLocation = (filterLocation) => {
@@ -45,7 +45,7 @@ const Table = () => {
             <td
               className={` ${sticky ? "table-photo1 col-2" : "table-photo"} `}
             >
-              <img className="stickyphoto" src={headerPhoto}></img>
+              <img className="stickyphoto" src={headerPhoto} alt="headerPhoto"></img>
             </td>
             <td className="col-md-2 rowcol">
               Age
@@ -89,7 +89,7 @@ const Table = () => {
                   // setLocation(e.target.value);
                   selectLocation(e.currentTarget.value);
                 }}
-                value={selectLocation}
+                value={filterLocation}
               >
                 <option className="optionDrop" value="Delhi">
                   Delhi
@@ -110,7 +110,7 @@ const Table = () => {
               <select
                 className="dropdownList col-md-12"
                 onChange={(e) => selectOccupation(e.currentTarget.value)}
-                value={selectOccupation}
+                value={filterOccupation}
                 // value={filterLocation}
                 // onChange={(e) => }
               >

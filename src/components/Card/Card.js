@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Fragment } from "react";
 import "./Card.css";
 import parvathamma from "../../assests/parvathamma.svg";
@@ -9,9 +8,8 @@ import Grid from "../Grid/Grid";
 import useSticky from "../StickyHeader/StickyHeader";
 import classNames from "classnames";
 import Ellipse from "../../assests/Ellipse.svg";
-import Table from "../Table/Table";
 
-const Card = ({cardUsers}) => {
+const Card = ({cardUsers, childImageClick, deleteChild}) => {
   const [data, setData] = useState(cardUsers);
   const [showSelectedData, setShowSelectedData] = useState(false);
   const [filteredData, setFilteredData] = useState(false)
@@ -27,46 +25,22 @@ const Card = ({cardUsers}) => {
   //   });
   // }, []);
 
-  const onDeleteParent = (personID) =>{
-    setData(
-      data.map((el) =>
-        el.persona_id === personID
-          ? Object.assign({}, el, { isSelected: false })
-          : el
-      )
-    );
-    console.log(personID)
-    console.log("coming here")
-  }
+  
 
   const imageClick = (details) => {
-    const getSelectedValue = data.filter((ele) => ele.isSelected);
-    if (
-      (getSelectedValue.length < 4 && !details.isSelected) ||
-      details.isSelected
-    ) {
-      setData(
-        data.map((el) =>
-          el.persona_id === details.persona_id
-            ? Object.assign({}, el, { isSelected: !el.isSelected })
-            : el
-        )
-      );
-    } else {
-      alert("you have selected less than 4");
-    }
+    childImageClick(details);
+    
   };
   return (
     <Fragment>
       <div className="col-md-12 card-container4">
-        {data.map((details) => (
+        {cardUsers.map((details) => (
           <div
             className={`single-card1 ${
-              details?.isSelected ? "selected-border" : "normal-border1"
+              details?.isSelected ? "selected-border1" : "normal-border1"
             }`}
             onClick={() => {
               imageClick(details);
-              console.log("...",imageClick)
             }}
           >
             <img
@@ -102,24 +76,6 @@ const Card = ({cardUsers}) => {
                 </div>
               </div>
             </div>
-            </div>
-          ))}
-      
-          <div
-            onClick={() => setShowSelectedData(true)}
-            className={classNames("download_data", "", { sticky })}
-            style={{
-              height: sticky ? `${stickyRef.current?.clientHeight}px` : "px",
-            }}
-            ref={stickyRef}
-          >
-            <img className="download_img" src={download} />
-            <span>
-              {data.filter((el) => el?.isSelected && el?.isSelected).length >
-              0 ? (
-                <img className="ellipse" src={Ellipse} alt="Ellipse" />
-              ) : null}
-            </span>
           </div>
         ))}
         <div
@@ -132,7 +88,7 @@ const Card = ({cardUsers}) => {
         >
           <img className="download_img" src={download} />
           <span>
-            {data.filter((el) => el?.isSelected && el?.isSelected).length >
+            {cardUsers.filter((el) => el?.isSelected && el?.isSelected).length >
             0 ? (
               <img className="ellipse" src={Ellipse} alt="Ellipse" />
             ) : null}
@@ -140,12 +96,8 @@ const Card = ({cardUsers}) => {
         </div>
 
         {showSelectedData && (
-          <Grid data={data} onChildDelete={e => onDeleteParent(e)} setShowSelectedData={setShowSelectedData} />
+          <Grid data={cardUsers} onChildDelete={e => deleteChild(e)} setShowSelectedData={setShowSelectedData} />
         )}
-        {filteredData && (
-         <Grid data={data} onChildDelete={onDeleteParent} setFilteredData={setFilteredData}/>
-        )
-}
       </div>
     </Fragment>
   );

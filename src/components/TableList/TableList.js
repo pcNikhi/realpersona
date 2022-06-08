@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "./TableList.css";
 import parvathamma from "../../assests/parvathamma.svg";
 import checkbox from "../../assests/checkbox.svg";
@@ -9,7 +8,7 @@ import classNames from "classnames";
 import useSticky from "../StickyHeader/StickyHeader";
 import Ellipse from "../../assests/Ellipse.svg";
 
-const TableList = ({tableUsers}) => {
+const TableList = ({tableUsers, childImageClick, deleteChild}) => {
   const [data, setData] = useState(tableUsers);
   const { sticky, stickyRef } = useSticky();
   const [showSelectedData, setShowSelectedData] = useState(false);
@@ -25,21 +24,7 @@ const TableList = ({tableUsers}) => {
   // }, []);
 
   const tableClick = (details) => {
-    const getSelectedValue = data.filter((ele) => ele.isSelected);
-    if (
-      (getSelectedValue.length < 4 && !details.isSelected) ||
-      details.isSelected
-    ) {
-      setData(
-        data.map((el) =>
-          el.persona_id === details.persona_id
-            ? Object.assign({}, el, { isSelected: !el.isSelected })
-            : el
-        )
-      );
-    } else {
-      alert("you have selected less than 4");
-    }
+      childImageClick(details);
   };
   // console.log(">>>", selectedItems);
   return (
@@ -47,7 +32,7 @@ const TableList = ({tableUsers}) => {
       <div>
         <div>
           <table className="col-md-12 table_grid">
-            {data.map((details) => (
+            {tableUsers.map((details) => (
               <tr
                 className={`row-size ${
                   details?.isSelected ? "selected-border" : "normal-border"
@@ -106,7 +91,7 @@ const TableList = ({tableUsers}) => {
           </span>
 
           {showSelectedData && (
-            <Grid data={data} setShowSelectedData={setShowSelectedData} />
+            <Grid data={tableUsers} onChildDelete={e => deleteChild(e)} setShowSelectedData={setShowSelectedData} />
           )}
         </div>
       </div>
