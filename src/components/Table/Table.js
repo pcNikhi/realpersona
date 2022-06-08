@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Table.css";
 import background from "../../assests/background.svg";
-import CardAndTable from "../CardAndTable/CardAndTable";
+// import CardAndTable from "../CardAndTable/CardAndTable";
 import classNames from "classnames";
 import useSticky from "../StickyHeader/StickyHeader";
 
