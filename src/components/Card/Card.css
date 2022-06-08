@@ -158,7 +158,8 @@ h4 {
 div.sticky {
   position: fixed;
   right: 2.3rem;
-  top: 0rem;
+  top: 0.8rem;
+  z-index: 9999;
 }
 .download_img {
   background-color: #3144b4;

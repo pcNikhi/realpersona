@@ -1,3 +1,5 @@
+.table-container {
+}
 .table1 {
   border: 1px solid #3144b4;
   /* text-align: center; */
@@ -65,12 +67,24 @@
   position: sticky;
   /* z-index: 9999; */
 }
-table.sticky{
+table.sticky {
   position: fixed;
   top: 0;
   left: 0;
   box-shadow: none;
-  width:80%;
 }
-
-
+.table-photo {
+  display: none;
+}
+.table-photo1 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.stickyphoto {
+  width: 78px;
+  height: 70px;
+}
+.table-filters{
+  padding-left: 1rem;
+  font-size: 15px;
+}

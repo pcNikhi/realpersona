@@ -78,7 +78,8 @@
 span.sticky{
   position: fixed;
   right: 0rem;
-  top: 0rem;  
+  top: 0.8rem;  
+  z-index: 9999;
 }
 .download_img1 {
   background-color: #3144b4;

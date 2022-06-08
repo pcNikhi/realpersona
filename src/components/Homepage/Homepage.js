@@ -17,7 +17,7 @@ const Homepage = () => {
               <span className="love-color"> Love</span> by Lollpop design tribe
             </div>
             <div class="row">
-              <div className="heading col-md-12 col col-sm-12 ">
+              <div className="heading col-md-12 ">
                 Real <img src={headerPhoto} alt="Rectangle_1"></img> People for
                 your persona
               </div> 

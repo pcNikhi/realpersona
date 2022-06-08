@@ -190,20 +190,21 @@
   letter-spacing: -0.02em;
   color: #3144b4;
 }
-.selected_number
-{
-    font-family: 'Sora';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 160%;
-    letter-spacing: -0.05em;
+.selected_number {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -0.05em;
+  background: none;
+  padding: 15px;
 }
-.close_button
-{
-    background-color:#3144b4;
-    color: #f9dad3;
-    border: none;
+
+.close_button {
+  background-color: #3144b4;
+  color: #f9dad3;
+  border: none;
 }
 /* .sticky {
   position: fixed;
