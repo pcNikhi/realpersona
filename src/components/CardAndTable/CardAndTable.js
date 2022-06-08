@@ -28,6 +28,37 @@ const CardAndTable = () => {
         setUsers(data);
       });
   };
+  const parentClick = (details) =>{
+    console.log(details);
+    const getSelectedValue = users.filter((ele) => ele.isSelected);
+    if (
+      (getSelectedValue.length < 4 && !details.isSelected) ||
+      details.isSelected
+    ) {
+      setUsers(
+        users.map((el) =>
+          el.persona_id === details.persona_id
+            ? Object.assign({}, el, { isSelected: !el.isSelected })
+            : el
+        )
+      );
+      setTimeout(() =>{
+        console.log(users);
+      }, 1000)
+      
+    } else {
+      alert("you have selected less than 4");
+    }
+  }
+  const onDeleteParent = (personID) =>{
+    setUsers(
+      users.map((el) =>
+        el.persona_id === personID
+          ? Object.assign({}, el, { isSelected: false })
+          : el
+      )
+    );
+  }
   useEffect(() => {
     fetchData();
   }, []);
@@ -55,8 +86,8 @@ const CardAndTable = () => {
         </tr>
       </table>
       
-      {users.length > 0 && card && <Card cardUsers={users} />}
-      {users.length > 0 && tablel && <TableList tableUsers={users}/>}
+      {users.length > 0 && card && <Card cardUsers={users} childImageClick={e => parentClick(e)} deleteChild={e => onDeleteParent(e)} />}
+      {users.length > 0 && tablel && <TableList tableUsers={users} childImageClick={e => parentClick(e)} deleteChild={e => onDeleteParent(e)} />}
     </div>
   );
 };
