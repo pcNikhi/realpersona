@@ -9,6 +9,7 @@ import Grid from "../Grid/Grid";
 import useSticky from "../StickyHeader/StickyHeader";
 import classNames from "classnames";
 import Ellipse from "../../assests/Ellipse.svg";
+import Table from "../Table/Table";
 
 const Card = ({cardUsers}) => {
   const [data, setData] = useState(cardUsers);
@@ -101,6 +102,24 @@ const Card = ({cardUsers}) => {
                 </div>
               </div>
             </div>
+            </div>
+          ))}
+      
+          <div
+            onClick={() => setShowSelectedData(true)}
+            className={classNames("download_data", "", { sticky })}
+            style={{
+              height: sticky ? `${stickyRef.current?.clientHeight}px` : "px",
+            }}
+            ref={stickyRef}
+          >
+            <img className="download_img" src={download} />
+            <span>
+              {data.filter((el) => el?.isSelected && el?.isSelected).length >
+              0 ? (
+                <img className="ellipse" src={Ellipse} alt="Ellipse" />
+              ) : null}
+            </span>
           </div>
         ))}
         <div

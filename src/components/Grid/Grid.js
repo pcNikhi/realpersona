@@ -12,6 +12,7 @@ const Grid = ({ data, setShowSelectedData, onChildDelete }) => {
       const newVar=[...filteredData]
       newVar.splice(getIndex,1);
       setFilteredData(newVar);
+      console.log(newVar)
     }
 
   return (
@@ -21,7 +22,6 @@ const Grid = ({ data, setShowSelectedData, onChildDelete }) => {
             <img src={close} alt="close" />
           </button>
         </div>
-     
       <p className="selected2">
         Selected
         <span className="selected_number">0{filteredData.length}/04</span>

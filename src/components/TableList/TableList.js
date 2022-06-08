@@ -90,21 +90,21 @@ const TableList = ({tableUsers}) => {
           </table>
           <span
             onClick={() => setShowSelectedData(true)}
-            className={classNames("download_data1", { sticky })}
+            className={classNames("download_data1", "", { sticky })}
             style={{
-              height: sticky
-                ? `${stickyRef.current?.clientHeight}px`
-                : '0px'
-            }}ref={stickyRef}
+              height: sticky ? `${stickyRef.current?.clientHeight}px` : "0px",
+            }}
+            ref={stickyRef}
           >
             <img className="download_img1" src={download} />
             <span>
-            {data.filter(el=> el?.isSelected && el?.isSelected).length > 0 ? (
-              <img className="ellipse1" src={Ellipse} alt="Ellipse" />
-            ): null}
+              {data.filter((el) => el?.isSelected && el?.isSelected).length >
+              0 ? (
+                <img className="ellipse1" src={Ellipse} alt="Ellipse" />
+              ) : null}
+            </span>
           </span>
-          </span>
-          
+
           {showSelectedData && (
             <Grid data={data} setShowSelectedData={setShowSelectedData} />
           )}
