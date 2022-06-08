@@ -27,7 +27,7 @@ const Homepage = () => {
             <Table />
           </nav>
         </div>
-        {/* <CardAndTable /> */}
+        <CardAndTable />
       </div>
     </div>
   );

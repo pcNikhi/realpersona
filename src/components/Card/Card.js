@@ -11,25 +11,33 @@ import classNames from "classnames";
 import Ellipse from "../../assests/Ellipse.svg";
 import Table from "../Table/Table";
 
-const Card = ({ filterLocation, filterOccupation }) => {
-  const [data, setData] = useState([]);
+const Card = ({cardUsers}) => {
+  const [data, setData] = useState(cardUsers);
   const [showSelectedData, setShowSelectedData] = useState(false);
-  const { sticky, stickyRef } = useSticky("");
-  // const [filterData, setFilterData] = useState("");
-  // const [filterLocation, setfilterLocation] = useState(data);
-  // const selectLocation = (filterLocation) => {
-  //   setfilterLocation(filterLocation);
-  //   console.log(filterLocation);
-  // };
-  useEffect(() => {
-    axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
-      response.data.map((ele) => {
-        ele.isSelected = false;
-        return ele;
-      });
-      setData(response.data);
-    });
-  }, []);
+  const [filteredData, setFilteredData] = useState(false)
+  const { sticky, stickyRef } = useSticky();
+
+  // useEffect(() => {
+  //   axios.get("http://199.34.21.254/persona/personas/0/10").then((response) => {
+  //     response.data.map((ele) => {
+  //       ele.isSelected = false;
+  //       return ele;
+  //     });
+  //     setData(response.data);
+  //   });
+  // }, []);
+
+  const onDeleteParent = (personID) =>{
+    setData(
+      data.map((el) =>
+        el.persona_id === personID
+          ? Object.assign({}, el, { isSelected: false })
+          : el
+      )
+    );
+    console.log(personID)
+    console.log("coming here")
+  }
 
   const imageClick = (details) => {
     const getSelectedValue = data.filter((ele) => ele.isSelected);
@@ -48,68 +56,55 @@ const Card = ({ filterLocation, filterOccupation }) => {
       alert("you have selected less than 4");
     }
   };
-  const filteredOccupation = data.filter(({ occupation }) => {
-    return filterOccupation? occupation === filterOccupation :data;
-  });
-  const filteredLocation = data.filter(({ location }) => {
-    return filterLocation? location === filterLocation:data ;
-  });
-
-  // useEffect(() => {
-  //   filterData = filteredOccupation();
-  //   filterData = filteredLocation();
-  //   setFilterData();
-  // }, [filterOccupation,filterLocation]);
-  // const result = [filteredLocation,filteredOccupation]
-  const filterData =  {}
   return (
-    <div>
-      <Fragment>
-        <div className="col-md-12 card-container4">
-          {(filteredOccupation)&&(filteredLocation).map((details) => (
-            <div
-              className={`single-card1 ${
-                details?.isSelected ? "selected-border" : "normal-border1"
-              }`}
-              onClick={() => {
-                imageClick(details);
-              }}
-            >
-              <img
-                className={`image-border1 ${details?.isSelected && "border"}`}
-                key={details?.persona_id}
-                src={parvathamma}
-                alt="parvathamma"
-              />
+    <Fragment>
+      <div className="col-md-12 card-container4">
+        {data.map((details) => (
+          <div
+            className={`single-card1 ${
+              details?.isSelected ? "selected-border" : "normal-border1"
+            }`}
+            onClick={() => {
+              imageClick(details);
+              console.log("...",imageClick)
+            }}
+          >
+            <img
+              className={`image-border1 ${details?.isSelected && "border"}`}
+              key={details?.persona_id}
+              src={parvathamma}
+              alt="parvathamma"
+            />
 
-              <div className="card-details-con1">
-                <div className="persona_fname">{details.firstname}</div>
-                <div className="persona_lname">{details.lastname}</div>
-                <div className="dtls-con1">
-                  <div>
-                    <div className="persona_age">
-                      {details.age} years {details.occupation}
-                    </div>
-                    <div className="persona_location">{details.location} </div>
+            <div className="card-details-con1">
+              <div className="persona_fname">{details.firstname}</div>
+              <div className="persona_lname">{details.lastname}</div>
+              <div className="dtls-con1">
+                <div>
+                  <div className="persona_age">
+                    {details.age} years {details.occupation}
                   </div>
-                  <div>
-                    {details?.isSelected && (
-                      <img
-                        className="input-box2"
-                        src={Check}
-                        alt="Check"
-                        onClick={() => {
-                          {
-                            imageClick(details);
-                          }
-                        }}
-                      />
-                    )}
-                  </div>
+                  <div className="persona_location">{details.location} </div>
+                </div>
+                <div>
+                  {details?.isSelected && (
+                    <img
+                      className="input-box2"
+                      src={Check}
+                      alt="Check"
+                      onClick={() => {
+                        {
+                          imageClick(details);
+                        }
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
+            </div>
           ))}
+      
           <div
             onClick={() => setShowSelectedData(true)}
             className={classNames("download_data", "", { sticky })}
@@ -126,13 +121,33 @@ const Card = ({ filterLocation, filterOccupation }) => {
               ) : null}
             </span>
           </div>
-
-          {showSelectedData && (
-            <Grid data={data} setShowSelectedData={setShowSelectedData} />
-          )}
+        ))}
+        <div
+          onClick={() => setShowSelectedData(true)}
+          className={classNames("download_data", "", { sticky })}
+          style={{
+            height: sticky ? `${stickyRef.current?.clientHeight}px` : "px",
+          }}
+          ref={stickyRef}
+        >
+          <img className="download_img" src={download} />
+          <span>
+            {data.filter((el) => el?.isSelected && el?.isSelected).length >
+            0 ? (
+              <img className="ellipse" src={Ellipse} alt="Ellipse" />
+            ) : null}
+          </span>
         </div>
-      </Fragment>
-    </div>
+
+        {showSelectedData && (
+          <Grid data={data} onChildDelete={e => onDeleteParent(e)} setShowSelectedData={setShowSelectedData} />
+        )}
+        {filteredData && (
+         <Grid data={data} onChildDelete={onDeleteParent} setFilteredData={setFilteredData}/>
+        )
+}
+      </div>
+    </Fragment>
   );
 };
 

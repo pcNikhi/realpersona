@@ -158,12 +158,12 @@ const Table = () => {
           </button>
         </p>
       </div>
-      {
+      {/* {
         <Card
           filterLocation={filterLocation}
           filterOccupation={filterOccupation}
         />
-      }
+      } */}
     </div>
   );
 };

@@ -141,15 +141,17 @@
   letter-spacing: -0.02em;
   color: #3144b4;
 }
-.selected_number {
-  font-family: "Sora";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 20px;
-  line-height: 160%;
-  letter-spacing: -0.05em;
-  background: white;
-  border: white;
+.selected_number
+{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: -0.05em;
+  background: none;
+  padding: 7px;
+  
 }
 .download {
   position: absolute;
